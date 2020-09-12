@@ -1,0 +1,20 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_ueberschrift
+    - taxonomy.vocabulary.jobkategorie
+  module:
+    - text
+id: taxonomy_term.jobkategorie.field_ueberschrift
+field_name: field_ueberschrift
+entity_type: taxonomy_term
+bundle: jobkategorie
+label: Überschrift
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

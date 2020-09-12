@@ -1,0 +1,55 @@
+.paragraph {
+
+  .row > h2 {
+    @extend .col-12;
+  }
+
+  &.layout-25-75 .row {
+    > .field-paragraph-left {
+      @extend .col-sm-3;
+    }
+
+    > .field-paragraph-right {
+      @extend .col-sm-9;
+    }
+
+  }
+
+  &.layout-33-66 .row {
+    > .field-paragraph-left {
+      @extend .col-sm-4;
+    }
+
+    > .field-paragraph-right {
+      @extend .col-sm-8;
+    }
+  }
+
+  &.layout-50-50 .row > .field-paragraph-left,
+  &.layout-50-50 .row > .field-paragraph-right {
+    @extend .col-sm-6;
+  }
+
+  &.layout-66-33 .row {
+    > .field-paragraph-left {
+      @extend .col-sm-8;
+    }
+
+    > .field-paragraph-right {
+      @extend .col-sm-4;
+    }
+
+  }
+
+  &.layout-75-25 .row {
+    > .field-paragraph-left {
+      @extend .col-sm-9;
+    }
+
+    > .field-paragraph-right {
+      @extend .col-sm-3;
+    }
+
+  }
+
+}

@@ -1,0 +1,17 @@
+.img-fluid {
+  width: 100%;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.highlight-primary {
+  color: $primary;
+}
+
+.highlight-secondary {
+  color: $secondary;
+}

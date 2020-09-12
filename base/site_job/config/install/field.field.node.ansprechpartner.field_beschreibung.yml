@@ -1,0 +1,20 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_beschreibung
+    - node.type.ansprechpartner
+  module:
+    - text
+id: node.ansprechpartner.field_beschreibung
+field_name: field_beschreibung
+entity_type: node
+bundle: ansprechpartner
+label: Beschreibung
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,18 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_map_api_key
+    - paragraphs.paragraphs_type.map
+id: paragraph.map.field_map_api_key
+field_name: field_map_api_key
+entity_type: paragraph
+bundle: map
+label: 'API Key'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

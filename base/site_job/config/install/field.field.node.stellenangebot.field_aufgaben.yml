@@ -1,0 +1,20 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aufgaben
+    - node.type.stellenangebot
+  module:
+    - text
+id: node.stellenangebot.field_aufgaben
+field_name: field_aufgaben
+entity_type: node
+bundle: stellenangebot
+label: 'Ihre Aufgaben'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

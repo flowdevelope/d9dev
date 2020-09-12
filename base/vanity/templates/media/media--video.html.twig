@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+
+  {{ title_suffix.contextual_links }}
+  {% if content %}
+
+    {% for key, file in content.field_media_video_file if key|first != '#' %}
+
+      <video
+
+        {% for attribute in content.field_media_video_attributes if key|first != '#' %}
+          {{ attribute['#markup'] }}
+        {% endfor %}
+
+        {% if media.field_media_video_mobile.isEmpty() == false %}
+          data-mobile_video="{{ file_url(media.field_media_video_mobile[key].entity.uri.value) }}"
+        {% endif %}
+
+        {% if media.field_media_video_poster.isEmpty() == false %}
+          poster="{{ file_url(media.field_media_video_poster[key].entity.uri.value) }}"
+        {% endif %}
+      >
+        {% for video in file['#files'] %}
+          <source {{ video.source_attributes }} />
+        {% endfor %}
+
+        {% if media.field_media_video_subtitle.isEmpty() == false %}
+          <track srclang="de" kind="captions" label="Deutsch" type="text/vtt"
+                 src="{{ file_url(media.field_media_video_subtitle[key].entity.uri.value) }}" />
+        {% endif %}
+
+      </video>
+    {% endfor %}
+
+    {{ content|without('field_media_video_mobile', 'field_media_video_file', 'field_media_video_poster', 'field_media_video_attributes', 'field_media_video_subtitle') }}
+  {% endif %}

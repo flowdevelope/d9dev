@@ -1,0 +1,14 @@
+form {
+  label.option {
+    @extend .form-check-label;
+  }
+  fieldset {
+    margin: 0 0 30px;
+  }
+  .form-control {
+    &:focus {
+     box-shadow: none;
+    }
+  }
+
+}

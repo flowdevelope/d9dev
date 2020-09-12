@@ -1,0 +1,18 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ansprechpartner_mail
+    - node.type.stellenangebot
+id: node.stellenangebot.field_ansprechpartner_mail
+field_name: field_ansprechpartner_mail
+entity_type: node
+bundle: stellenangebot
+label: 'Ansprechpartner E-Mail'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

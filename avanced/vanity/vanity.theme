@@ -1,0 +1,54 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+function vanity_preprocess_html(&$vars) {
+
+  $tempstore = \Drupal::service('user.private_tempstore')->get('protected');
+  $protected = $tempstore->get('protected');
+
+  if (empty($protected)) {
+    $tempstore->set('protected', TRUE);
+  } else {
+    $vars['attributes']['class'][] = 'protect';
+  }
+
+}
+
+function vanity_preprocess_page(&$vars) {
+
+  $site_config = \Drupal::config('system.site');
+  $vars['site_name'] = $site_config->get('name');
+  $vars['site_slogan'] = $site_config->get('slogan');
+  $vars['logopath'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+
+  if (empty($vars['node'])) {
+    $vars['show_container'] = TRUE;
+  }
+}
+
+function vanity_preprocess_paragraph(&$vars) {
+
+  if ($vars['paragraph']->hasField('field_paragraph_title')) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+    $paragraph = $vars['paragraph'];
+
+    if (!empty($paragraph->get('field_paragraph_title')->getValue())) {
+      $vars['title_attributes']['class'][] = 'paragraphtitle';
+      $vars['title_attributes']['id'][] = $paragraph->get('field_paragraph_title')->value;
+    }
+  }
+
+  if ($vars['paragraph']->hasField('field_paragraph_background')) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+    $paragraph = $vars['paragraph'];
+
+    if (!empty($paragraph->get('field_paragraph_background')->getValue())) {
+      $vars['attributes']['class'][] = 'paragraph-with-background';
+    }
+
+  }
+}

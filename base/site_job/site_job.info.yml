@@ -1,0 +1,19 @@
+name: 'Site Job'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - file
+  - image
+  - language
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - svg_image
+  - taxonomy
+  - text
+  - user
+  - viewfield
+  - views
+core_incompatible: false

@@ -1,0 +1,62 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.one_column.field_paragraph_aaa_summary
+    - field.field.paragraph.one_column.field_paragraph_background
+    - field.field.paragraph.one_column.field_paragraph_text
+    - field.field.paragraph.one_column.field_paragraph_title
+    - field.field.paragraph.one_column.field_paragraphs_appearance
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.one_column
+  module:
+    - classier_paragraphs
+    - svg_image
+    - text
+id: paragraph.one_column.default
+targetEntityType: paragraph
+bundle: one_column
+mode: default
+content:
+  field_paragraph_aaa_summary:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraph_background:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_paragraph_text:
+    type: text_textarea
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_title:
+    type: string_textfield
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraphs_appearance:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: classier_paragraphs_form
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

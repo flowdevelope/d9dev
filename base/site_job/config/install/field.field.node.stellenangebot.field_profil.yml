@@ -1,0 +1,20 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profil
+    - node.type.stellenangebot
+  module:
+    - text
+id: node.stellenangebot.field_profil
+field_name: field_profil
+entity_type: node
+bundle: stellenangebot
+label: 'Ihr Profil'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

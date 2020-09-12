@@ -1,0 +1,251 @@
+langcode: de
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: mitarbeiterbefragung
+title: Bewerbungsformular
+description: ''
+category: ''
+elements: "start:\n  '#type': webform_wizard_page\n  '#title': 'Persönliche Angaben'\n  '#next_button_label': 'Weiter zum nächsten Schritt'\n  bewerbung_als:\n    '#type': hidden\n    '#title': 'Bewerbung als'\n    '#default_value': '[current-page:query:job_title]'\n  einleitung:\n    '#type': webform_markup\n    '#markup': '<h3><strong>Pers&ouml;nliche Angaben</strong></h3>'\n  anrede1:\n    '#type': select\n    '#title': Anrede\n    '#options':\n      Frau: Frau\n      Herr: Herr\n      Dr.: Dr.\n  vorname:\n    '#type': textfield\n    '#title': Vorname\n    '#minlength': '2'\n    '#placeholder': Vorname\n    '#required': true\n    '#required_error': 'Bitte Vornamen eingeben'\n    '#format_items': comma\n  nachname:\n    '#type': textfield\n    '#title': Nachname\n    '#minlength': '2'\n    '#required': true\n  strasse_und_hausnummer:\n    '#type': textfield\n    '#title': 'Straße und Hausnummer'\n    '#required': true\n    '#format_items': comma\n  container:\n    '#type': container\n    '#attributes':\n      class:\n        - row\n    plz:\n      '#type': textfield\n      '#title': PLZ\n      '#autocomplete': 'off'\n      '#required': true\n      '#required_error': 'Bitte PLZ eingeben'\n      '#wrapper_attributes':\n        class:\n          - col-lg-2\n    ort:\n      '#type': textfield\n      '#title': Ort\n      '#required': true\n      '#required_error': 'Bitte Ort eingeben'\n      '#wrapper_attributes':\n        class:\n          - col-lg-10\n  land:\n    '#type': webform_select_other\n    '#title': Land\n    '#title_display': before\n    '#options': country_names\n    '#select2': true\n    '#required': true\n  geburtsdatum_2:\n    '#type': datelist\n    '#title': Geburtsdatum\n    '#required': true\n    '#format': german_short_date\n    '#format_items': comma\n    '#date_part_order':\n      - day\n      - month\n      - year\n    '#date_year_range': '-70:-16'\n  ich_moechte_eine_schwerbehinderung_gleichstellung_angeben:\n    '#type': checkbox\n    '#title': 'Ich möchte eine Schwerbehinderung / Gleichstellung angeben'\n  horizontal_rule_03:\n    '#type': webform_horizontal_rule\n  kontakt:\n    '#type': webform_markup\n    '#markup': '<h3><strong>Kontakt</strong></h3>'\n  e_mail_adresse:\n    '#type': email\n    '#title': 'E-Mail Adresse'\n    '#format_items': comma\n    '#required': true\n  telefonnummer:\n    '#type': tel\n    '#title': Telefonnummer\n    '#format_items': comma\n  ich_besitze_kein_telefon_moechte_keine_telefonummer_angeben:\n    '#type': checkbox\n    '#title': 'Ich besitze kein Telefon / möchte keine Telefonummer angeben'\n  horizontal_rule_04:\n    '#type': webform_horizontal_rule\n  angaben_zur_ausbildung:\n    '#type': webform_markup\n    '#markup': '<h3><strong>Angaben zur Ausbildung</strong></h3>'\n  ihr_schulabschluss:\n    '#type': select\n    '#title': 'Ihr Schulabschluss'\n    '#options':\n      Hauptschule: Hauptschule\n      'Mittlere Reife': 'Mittlere Reife'\n      Abitur: Abitur\n      Hochschulabschluss: Hochschulabschluss\n    '#required': true\n  jahr_des_schulabschlusses:\n    '#type': datelist\n    '#title': 'Jahr des Schulabschlusses'\n    '#required': true\n    '#attributes':\n      style: 'width:100%'\n    '#format': html_year\n    '#format_items': comma\n    '#date_part_order':\n      - year\n    '#date_year_range': '-54:-16'\n  name_der_letzten_schule:\n    '#type': textfield\n    '#title': 'Name der letzten Schule'\n    '#minlength': '2'\n    '#placeholder': 'Z. B. Mittelschule Musterstadt'\n    '#required': true\n    '#format_items': comma\ndaten:\n  '#type': webform_wizard_page\n  '#title': Dokumente\n  '#prev_button_label': 'zurück zum letzten Schritt'\n  '#next_button_label': 'weiter zum nächsten Schritt'\n  anschreiben_lebenslauf:\n    '#type': webform_markup\n    '#markup': |\n      <h3><strong>Anschreiben &amp; Lebenslauf<br />\n        <small>(bitte getrennt hochladen)</small></strong></h3>\n      \n  anschreiben:\n    '#type': managed_file\n    '#title': Anschreiben\n    '#help_title': help\n    '#help': 'Nur eine PDF-Datei m&ouml;glich. 10MB Limit.'\n    '#required': true\n    '#format_items': comma\n    '#file_help': help\n    '#max_filesize': '10'\n    '#file_extensions': pdf\n  lebenslauf:\n    '#type': managed_file\n    '#title': Lebenslauf\n    '#required': true\n    '#format_items': comma\n    '#max_filesize': '10'\n    '#file_extensions': pdf\n  horizontal_rule_05:\n    '#type': webform_horizontal_rule\n  weitere_anlagen:\n    '#type': webform_markup\n    '#markup': |\n      <h3><strong>Weitere Anlagen<br />\n      <small>(Zeugnisse, Bescheinigungen, etc.)</small></strong></h3>\n      \n  datei_hochladen:\n    '#type': managed_file\n    '#title': 'Datei hochladen'\n    '#required': true\n    '#format_items': comma\n    '#max_filesize': '10'\n    '#file_extensions': pdf\nfragen:\n  '#type': webform_wizard_page\n  '#title': Fragen\n  '#prev_button_label': 'zurück zum letzten Schritt'\n  '#next_button_label': 'weiter zum nächsten Schritt'\n  bitte_beantworten_sie_noch_diese_fragen:\n    '#type': webform_markup\n    '#markup': '<h4><strong>Bitte beantworten Sie noch diese Fragen</strong></h4>'\n  frage1:\n    '#type': select\n    '#title': 'Frage 1'\n    '#options':\n      Rot: Rot\n      Gelb: Gelb\n      Blau: Blau\n    '#required': true\n  frage2:\n    '#type': select\n    '#title': 'Frage 2'\n    '#options':\n      Wasser: Wasser\n      Cola: Cola\n      Limo: Limo\n      Apfelschorle: Apfelschorle\n    '#required': true\nhorizontal_rule:\n  '#type': webform_horizontal_rule\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Eintragen"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: ''
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_admin_theme: false
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: true
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 2
+  preview_label: 'Prüfen & Absenden'
+  preview_title: 'Prüfen & Absenden'
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements:
+    bewerbung_als: bewerbung_als
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: /node/3
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  e_mail:
+    id: email
+    label: E-Mail
+    handler_id: e_mail
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[sessions:amail]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  e_mail_1:
+    id: email
+    label: E-Mail
+    handler_id: e_mail_1
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:e_mail_adresse:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+variants: {  }

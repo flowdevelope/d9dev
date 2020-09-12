@@ -1,0 +1,32 @@
+.paragraph [class^="back-"] {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.back-1 {
+  .field-paragraph-first,
+  .field-paragraph-left,
+  .field-paragraph-text {
+    background: $gray-80;
+  }
+}
+
+.back-2 {
+  .field-paragraph-right,
+  .field-paragraph-second {
+    background: $gray-80;
+  }
+}
+
+.back-3 {
+  .field-paragraph-third {
+    background: $gray-80;
+  }
+}
+
+.back-4 {
+  .field-paragraph-fourth {
+    background: $gray-80;
+  }
+}

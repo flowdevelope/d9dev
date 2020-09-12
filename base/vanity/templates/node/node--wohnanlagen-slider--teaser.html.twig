@@ -1,0 +1,28 @@
+<div{{ attributes.removeAttribute('role').addClass('sliderinner') }}>
+  <div class="sliderinner--background" >
+    <div class="sliderinner--content">
+      <div {{ title_attributes.addClass('sliderinner--title') }}>
+        {{ title_prefix }}
+        {{ label }}
+        {{ title_suffix }}
+      </div>
+      <div class="sliderinner--border">&nbsp;</div>
+      <div class="sliderinner--teaser">
+        {% if content.field_contentbild.isEmpty() == false %}
+          <div class="row">
+            <div class="col-12 col-md-6">
+              {{ content.body }}
+            </div>
+            <div class="col-12 col-md-6">
+              {{ content.field_contentbild }}
+            </div>
+          </div>
+        {% else %}
+          {{ content.body }}
+        {% endif %}
+      </div>
+      {{ content|without('body','field_contentbild') }}
+    </div>
+  </div>
+</div>
+

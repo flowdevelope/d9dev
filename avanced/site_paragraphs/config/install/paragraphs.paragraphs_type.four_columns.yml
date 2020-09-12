@@ -1,0 +1,8 @@
+langcode: de
+status: true
+dependencies: {  }
+id: four_columns
+label: 'Four columns'
+icon_uuid: null
+description: null
+behavior_plugins: {  }

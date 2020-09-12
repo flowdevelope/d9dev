@@ -1,0 +1,35 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image.field_image_desktop
+    - field.field.paragraph.image.field_image_mobile
+    - field.field.paragraph.image.field_paragraph_aaa_summary
+    - field.field.paragraph.image.field_paragraphs_appearance
+    - paragraphs.paragraphs_type.image
+  module:
+    - image
+id: paragraph.image.default
+targetEntityType: paragraph
+bundle: image
+mode: default
+content:
+  field_image_desktop:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+  field_image_mobile:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+hidden:
+  field_paragraph_aaa_summary: true
+  field_paragraphs_appearance: true

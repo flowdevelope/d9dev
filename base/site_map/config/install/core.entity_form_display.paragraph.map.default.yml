@@ -1,0 +1,50 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map.field_latitude
+    - field.field.paragraph.map.field_longitude
+    - field.field.paragraph.map.field_map_adresse
+    - field.field.paragraph.map.field_map_api_key
+    - paragraphs.paragraphs_type.map
+id: paragraph.map.default
+targetEntityType: paragraph
+bundle: map
+mode: default
+content:
+  field_latitude:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_longitude:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_map_adresse:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_map_api_key:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,18 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titel
+    - node.type.ansprechpartner
+id: node.ansprechpartner.field_titel
+field_name: field_titel
+entity_type: node
+bundle: ansprechpartner
+label: Titel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

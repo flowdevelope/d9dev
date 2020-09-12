@@ -1,0 +1,32 @@
+.paragraph [class^="back-"] {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.shadow-1 {
+  .field-paragraph-first,
+  .field-paragraph-left,
+  .field-paragraph-text {
+    box-shadow: 0px 3px 6px rgba($black,.3);
+  }
+}
+
+.shadow-2 {
+  .field-paragraph-right,
+  .field-paragraph-second {
+    box-shadow: 0px 3px 6px rgba($black,.3);
+  }
+}
+
+.shadow-3 {
+  .field-paragraph-third {
+    box-shadow: 0px 3px 6px rgba($black,.3);
+  }
+}
+
+.shadow-4 {
+  .field-paragraph-fourth {
+    box-shadow: 0px 3px 6px rgba($black,.3);
+  }
+}

@@ -1,0 +1,70 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.four_columns.field_paragraph_aaa_summary
+    - field.field.paragraph.four_columns.field_paragraph_background
+    - field.field.paragraph.four_columns.field_paragraph_first
+    - field.field.paragraph.four_columns.field_paragraph_fourth
+    - field.field.paragraph.four_columns.field_paragraph_second
+    - field.field.paragraph.four_columns.field_paragraph_third
+    - field.field.paragraph.four_columns.field_paragraph_title
+    - field.field.paragraph.four_columns.field_paragraphs_appearance
+    - paragraphs.paragraphs_type.four_columns
+  module:
+    - paragraphs_background_image
+    - text
+id: paragraph.four_columns.default
+targetEntityType: paragraph
+bundle: four_columns
+mode: default
+content:
+  field_paragraph_background:
+    weight: 5
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: paragraphs_background_image
+    region: content
+  field_paragraph_first:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraph_fourth:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraph_second:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraph_third:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraph_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_paragraph_aaa_summary: true
+  field_paragraphs_appearance: true
+  uid: true

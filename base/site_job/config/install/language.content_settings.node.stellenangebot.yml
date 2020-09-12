@@ -1,0 +1,10 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.stellenangebot
+id: node.stellenangebot
+target_entity_type_id: node
+target_bundle: stellenangebot
+default_langcode: site_default
+language_alterable: false

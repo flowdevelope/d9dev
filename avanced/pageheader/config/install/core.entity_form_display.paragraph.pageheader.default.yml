@@ -1,0 +1,56 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pageheader.field_background
+    - field.field.paragraph.pageheader.field_headertitel
+    - field.field.paragraph.pageheader.field_link
+    - field.field.paragraph.pageheader.field_text
+    - image.style.inline_images
+    - paragraphs.paragraphs_type.pageheader
+  module:
+    - link
+    - svg_image
+    - text
+id: paragraph.pageheader.default
+targetEntityType: paragraph
+bundle: pageheader
+mode: default
+content:
+  field_background:
+    weight: 0
+    settings:
+      preview_image_style: inline_images
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_headertitel:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_text:
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+hidden:
+  created: true
+  status: true

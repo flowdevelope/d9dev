@@ -1,0 +1,6 @@
+services:
+  ctwigfilters.twig_extension:
+    arguments: ['@renderer']
+    class: Drupal\twigfilters\TwigExtension\TwigHelper
+    tags:
+      - { name: twig.extension }

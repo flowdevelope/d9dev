@@ -1,0 +1,55 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pageheader.field_background
+    - field.field.paragraph.pageheader.field_headertitel
+    - field.field.paragraph.pageheader.field_link
+    - field.field.paragraph.pageheader.field_text
+    - image.style.inline_images
+    - paragraphs.paragraphs_type.pageheader
+  module:
+    - image
+    - link
+    - text
+id: paragraph.pageheader.default
+targetEntityType: paragraph
+bundle: pageheader
+mode: default
+content:
+  field_background:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: inline_images
+    third_party_settings: {  }
+    type: image_url
+    region: content
+  field_headertitel:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

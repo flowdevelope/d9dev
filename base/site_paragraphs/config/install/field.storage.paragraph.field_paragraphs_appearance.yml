@@ -1,0 +1,18 @@
+langcode: de
+status: true
+dependencies:
+  module:
+    - classier_paragraphs
+    - paragraphs
+id: paragraph.field_paragraphs_appearance
+field_name: field_paragraphs_appearance
+entity_type: paragraph
+type: classier_paragraphs
+settings: {  }
+module: classier_paragraphs
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

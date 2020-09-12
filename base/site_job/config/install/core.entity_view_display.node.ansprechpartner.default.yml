@@ -1,0 +1,65 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.ansprechpartner.field_beschreibung
+    - field.field.node.ansprechpartner.field_email
+    - field.field.node.ansprechpartner.field_foto
+    - field.field.node.ansprechpartner.field_telefon
+    - field.field.node.ansprechpartner.field_titel
+    - node.type.ansprechpartner
+  module:
+    - svg_image
+    - text
+    - user
+id: node.ansprechpartner.default
+targetEntityType: node
+bundle: ansprechpartner
+mode: default
+content:
+  field_beschreibung:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_email:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_foto:
+    weight: 3
+    label: hidden
+    settings:
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_telefon:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titel:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  links: true

@@ -1,0 +1,21 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs_appearance
+    - paragraphs.paragraphs_type.webform
+  module:
+    - classier_paragraphs
+id: paragraph.webform.field_paragraphs_appearance
+field_name: field_paragraphs_appearance
+entity_type: paragraph
+bundle: webform
+label: Aussehen
+description: ''
+required: false
+translatable: true
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: classier_paragraphs

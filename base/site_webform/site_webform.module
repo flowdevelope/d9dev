@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * Implements hook_entity_embed_display_plugins_for_context_alter().
+ *
+ * The 'Rendered entity' formatter must be available for config entity contact_form.
+ *
+ * @see https://www.drupal.org/node/2736741
+ *
+ * @todo Remove when https://www.drupal.org/node/2796269 is fixed.
+ */
+function site_webform_entity_embed_display_plugins_for_context_alter(array &$definitions, array $context) {
+  if ($context['entity_type'] === 'webform') {
+    $definitions['entity_reference:entity_reference_entity_view']['no_ui'] = FALSE;
+  }
+}
+
+function site_webform_token_info() {
+  $type = array(
+    'name' => t('Sessions'),
+    'description' => t('Tokens related to $_SESSIONS superglobal.'),
+  );
+  $tokens = array();
+  foreach($_SESSION as $key => $val) { //discard $val now
+    $tokens[$key] = array(
+      'name' => $key,
+      'description' => "\$_SESSION['$key']",
+    );
+  }
+  return array(
+    'types' => array('sessions' => $type),
+    'tokens' => array('sessions' => $tokens),
+  );
+}
+
+function site_webform_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  if($type == 'sessions') {
+    $replacements = array();
+    foreach ($tokens as $name => $original) {
+      $replacements[$original] = (string)$_SESSION[$name];
+    }
+    return $replacements;
+  }
+}

@@ -1,0 +1,85 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.stellenangebot.field_angebot
+    - field.field.node.stellenangebot.field_ansprechpartner
+    - field.field.node.stellenangebot.field_ansprechpartner_mail
+    - field.field.node.stellenangebot.field_ansprechpartner_telefon
+    - field.field.node.stellenangebot.field_aufgaben
+    - field.field.node.stellenangebot.field_closed
+    - field.field.node.stellenangebot.field_job_nummer
+    - field.field.node.stellenangebot.field_kategorie
+    - field.field.node.stellenangebot.field_pdf
+    - field.field.node.stellenangebot.field_profil
+    - field.field.node.stellenangebot.field_stellenbeschreibung
+    - node.type.stellenangebot
+  module:
+    - file
+    - text
+    - user
+id: node.stellenangebot.default
+targetEntityType: node
+bundle: stellenangebot
+mode: default
+content:
+  field_angebot:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ansprechpartner:
+    type: entity_reference_entity_view
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_aufgaben:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_job_nummer:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pdf:
+    weight: 5
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_profil:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_stellenbeschreibung:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_ansprechpartner_mail: true
+  field_ansprechpartner_telefon: true
+  field_closed: true
+  field_kategorie: true
+  langcode: true
+  links: true

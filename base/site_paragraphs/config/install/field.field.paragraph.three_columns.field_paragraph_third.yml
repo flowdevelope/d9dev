@@ -1,0 +1,20 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_third
+    - paragraphs.paragraphs_type.three_columns
+  module:
+    - text
+id: paragraph.three_columns.field_paragraph_third
+field_name: field_paragraph_third
+entity_type: paragraph
+bundle: three_columns
+label: Third
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

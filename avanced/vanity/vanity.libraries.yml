@@ -1,0 +1,56 @@
+global-styling:
+  js:
+    js/vanity.min.js: {}
+    js/slider.min.js: {}
+  css:
+    theme:
+      css/style.css: {}
+  dependencies:
+    - vanity/bootstrap-scripts
+    - vanity/slick
+
+slick:
+  css:
+    theme:
+      /libraries/slick-carousel/slick/slick.css: {}
+  js:
+    /libraries/bLazy/blazy.min.js: {}
+    /libraries/slick-carousel/slick/slick.min.js: {}
+
+bootstrap-scripts:
+  js:
+    # Save the bits, kids: candidates for disabling:
+    # affix, button, carousel (*), scrollspy, tab
+    # *) Also see _bootstrap.scss
+    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js: { type: external, weight: -1 }
+    # //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js: { type: external, weight: 0 }
+#    bootstrap/js/dist/index.js: {} # index.js not required. Produces error message in console.
+    bootstrap/js/dist/util.js: {} # util.js has to be first included.
+    bootstrap/js/dist/alert.js: {}
+    bootstrap/js/dist/button.js: {}
+    bootstrap/js/dist/carousel.js: {}
+    bootstrap/js/dist/collapse.js: {}
+    bootstrap/js/dist/modal.js: {}
+    bootstrap/js/dist/tooltip.js: {}
+    bootstrap/js/dist/dropdown.js: {}
+    bootstrap/js/dist/scrollspy.js: {}
+    bootstrap/js/dist/tab.js: {}
+    bootstrap/js/dist/popover.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui
+    - core/drupal
+    - core/drupalSettings
+
+webfonts:
+  css:
+    theme:
+      fonts/ThirstyRoughBolOne/style.css: {}
+      //fonts.googleapis.com/css?family=Noto+Sans+SC:wght@500,700&display=swap: {}
+      # Keep in sync with css/editor.css!
+      //maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true, weight: 2 }
+
+shariff:
+  js:
+    js/vanity-shariff.min.js: {}

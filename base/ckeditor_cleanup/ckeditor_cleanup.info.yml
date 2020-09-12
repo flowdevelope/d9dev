@@ -1,0 +1,6 @@
+name: CKEditor CleanUp
+type: module
+description: 'Adds the CleanUp Filter'
+core: 8.x
+package: Helper
+

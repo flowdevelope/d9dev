@@ -1,0 +1,17 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.four_columns
+id: paragraph.four_columns.created
+field_name: created
+entity_type: paragraph
+bundle: four_columns
+label: 'geschrieben am'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

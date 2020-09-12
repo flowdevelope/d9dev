@@ -1,0 +1,23 @@
+.filter {
+  margin: 20px 0;
+  span {
+    padding: 0 5px 0 0;
+    font-size: 18px;
+    color: rgba($black,0.4);
+    &:after {
+      content: "\2022";
+      padding: 0 0 0 3px;
+    }
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+    span {
+      padding: 0;
+      &:after {
+        content: "";
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.webform-submission-spenden-form {
+  float: left;
+  width: 100%;
+  background: $green;
+  border-radius: 20px;
+  padding: 15px 30px;
+  h2, p {
+    color: $white;
+  }
+  #wert1,
+  #edit-wert1,
+  #wert2,
+  #edit-wert2,
+  #wert3,
+  #edit-wert3 {
+    float: left;
+    margin: 0 15px 0 0;
+    @extend .btn;
+    color: $black;
+    width: 65px !important;
+    height: 60px;
+    background: $white !important;
+    border: 2px solid $black;
+    border-radius: 50% !important;
+  }
+  .field-prefix {
+    color: $white;
+    margin: -15px 15px 0 0;
+    float: left;
+  }
+  #wert4,
+  #edit-wert4 {
+    display: inline-block;
+    color: $white;
+    background: transparent !important;
+    width: 300px;
+    border-bottom: 2px solid $white;
+    margin-top: 0;
+    placecolder {
+      color: $white;
+    }
+  }
+  .webform-button--submit {
+    background: $red !important;
+    border-radius: 10px !important;
+  }
+}

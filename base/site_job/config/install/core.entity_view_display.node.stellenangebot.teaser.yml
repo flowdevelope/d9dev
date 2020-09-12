@@ -1,0 +1,52 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.stellenangebot.field_angebot
+    - field.field.node.stellenangebot.field_ansprechpartner
+    - field.field.node.stellenangebot.field_ansprechpartner_mail
+    - field.field.node.stellenangebot.field_ansprechpartner_telefon
+    - field.field.node.stellenangebot.field_aufgaben
+    - field.field.node.stellenangebot.field_closed
+    - field.field.node.stellenangebot.field_job_nummer
+    - field.field.node.stellenangebot.field_kategorie
+    - field.field.node.stellenangebot.field_pdf
+    - field.field.node.stellenangebot.field_profil
+    - field.field.node.stellenangebot.field_stellenbeschreibung
+    - node.type.stellenangebot
+  module:
+    - text
+    - user
+id: node.stellenangebot.teaser
+targetEntityType: node
+bundle: stellenangebot
+mode: teaser
+content:
+  field_kategorie:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_stellenbeschreibung:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_angebot: true
+  field_ansprechpartner: true
+  field_ansprechpartner_mail: true
+  field_ansprechpartner_telefon: true
+  field_aufgaben: true
+  field_closed: true
+  field_job_nummer: true
+  field_pdf: true
+  field_profil: true
+  langcode: true
+  links: true

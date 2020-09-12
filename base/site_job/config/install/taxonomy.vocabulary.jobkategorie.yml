@@ -1,0 +1,7 @@
+langcode: de
+status: true
+dependencies: {  }
+name: jobkategorie
+vid: jobkategorie
+description: ''
+weight: 0

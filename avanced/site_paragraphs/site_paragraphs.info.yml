@@ -1,0 +1,17 @@
+name: 'Site Paragraphs'
+description: 'Konfiguration aller Paragraphs-Typen'
+type: module
+core: 8.x
+package: Site
+dependencies:
+  - classier_paragraphs
+  - field
+  - file
+  - image
+  - language
+  - node
+  - paragraphs
+  - paragraphs_background_image
+  - paragraphs_edit
+  - svg_image
+  - text

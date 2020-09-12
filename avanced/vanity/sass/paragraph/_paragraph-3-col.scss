@@ -1,0 +1,7 @@
+.paragraph {
+
+  &.paragraph--type--three-columns .row > div:not(.contextual){
+    @extend .col-sm-4;
+  }
+
+}

@@ -1,0 +1,21 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.one_column
+id: paragraph.one_column.status
+field_name: status
+entity_type: paragraph
+bundle: one_column
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

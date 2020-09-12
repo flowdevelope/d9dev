@@ -1,0 +1,37 @@
+$headings-margin-bottom: 1rem;
+
+$white:   #ffffff;
+$blue:    #364B9B;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #AE0F0A;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+$brown:   #7B6A58;
+$brown-dark: #695646;
+$black:    #1D1D1B;
+
+$gray-80:   #EBEBF6;
+
+$grays: () !default;
+$grays: map-merge((
+  "80": $gray-80,
+),$grays);
+
+$primary:       $blue;
+$secondary:     #868e96;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+        "status": $info,
+        "error":  $red,
+), $theme-colors);

@@ -1,0 +1,48 @@
+.paragraph {
+
+  &.background-signature-primary {
+    background: $primary;
+  }
+
+  &.background-signature-secondary {
+    background: $secondary;
+  }
+
+  .row > h2 {
+    @extend .col-12;
+  }
+
+  .row > div {
+    margin: 0 0 15px;
+    @include media-breakpoint-up(sm) {
+      margin: 0;
+    }
+  }
+
+  &.title-alt h2 {
+    @include text-inverted();
+  }
+
+  &.background-custom {
+    background-position: center center;
+  }
+
+  &.container-fluid.edge2edge {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .desktop {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  .mobile {
+    display: block;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}

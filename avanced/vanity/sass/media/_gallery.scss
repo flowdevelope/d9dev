@@ -1,0 +1,124 @@
+// @todo: Greift aktuell für jedes Media Image Feld. Muss auf gallery angepasst werden.
+
+.field-media-image  {
+  @include make-col-ready();
+  @include make-col(3);
+  display: none;
+  margin: {
+    bottom: $spacer;
+  }
+}
+
+.grid-sizer {
+  @include make-col-ready();
+  @include make-col(3);
+}
+
+.slideritems {
+  width: 100%;
+  margin: 0 0 30px;
+  .field-media-image  {
+    width: 100%;
+    margin: 0 0 15px;
+    img {
+      margin: 0 0 15px;
+    }
+    .description {
+      font: {
+        size: 20px;
+        weight: 400;
+      }
+      line-height: 25px;
+      color: $blue;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.slidernav {
+  background: $gray-100;
+  padding: 15px 30px;
+  max-height: 250px;
+  @include media-breakpoint-up(lg) {
+    &:before {
+      content:"";
+      background-color: $gray-100;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100vw;
+      margin-left: calc(-53vw + 51%);
+      z-index: -1;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    max-height: 500px;
+    background: $white;
+  }
+  .field-media-image  {
+    margin-right: 26px;
+    max-width: 200px;
+    max-height: 200px;
+    @include media-breakpoint-down(sm) {
+      max-height: 300px;
+    }
+    img {
+      padding-bottom: 5px;
+    }
+    .description {
+      display: none;
+      padding: 15px 2px;
+      font: {
+        size: 20px;
+        weight: 400;
+      }
+      line-height: 25px;
+      color: $blue;
+    }
+    @include media-breakpoint-up(lg) {
+      &.slick-current {
+        border-bottom: 3px solid $gray-300;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      max-width: 270px;
+      margin: 0 25px;
+      .description {
+        display: block;
+      }
+    }
+  }
+  .slick-prev {
+    position: absolute;
+    left: -5px;
+    top: 40%;
+    border: none;
+    background: transparent;
+    img {
+      width: 20px;
+      height: 40px;
+    }
+  }
+  .slick-next {
+    position: absolute;
+    right: -5px;
+    top: 40%;
+    border: none;
+    background: transparent;
+    img {
+      width: 20px;
+      height: 40px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .slick-prev {
+      top: 60%;
+    }
+    .slick-next {
+      top: 60%;
+    }
+  }
+}
+

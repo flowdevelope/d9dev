@@ -1,0 +1,13 @@
+{{ title_suffix.contextual_links }}
+  {% if content %}
+
+    <div data-media-id="{{ content.field_media_image['#object'].id }}" class="media-gallery media-gallery--isotope photoswipe-gallery">
+      <div class="grid-sizer"></div>
+
+      {{ content.field_media_image }}
+
+    </div>
+    <div class="col-md-4 offset-md-4">
+      <a data-media-id="{{ content.field_media_image['#object'].id }}" class="col-12 btn btn-primary media-gallery--show-more">{{ 'Show more'|t }}</a>
+    </div>
+  {% endif %}
