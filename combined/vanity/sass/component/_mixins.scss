@@ -1,0 +1,56 @@
+// Inverted text colors on signature backgrounds
+// @param true Add text-shadow to headlines
+@mixin text-inverted($with-shadow: false) {
+  color: #fff;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+
+    @if $with-shadow == true {
+      text-shadow: 1px 1px 1px $shadow-color;
+    }
+  }
+
+  a:not(.btn) {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  .btn-default {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus {
+      color: $primary;
+      background-color: #fff;
+    }
+  }
+}
+
+@mixin background-gradient($color1: null, $color2: null) {
+
+  @if ($color1 and $color2) {
+    background: $color1; /* Old browsers */
+    background: linear-gradient(to bottom, $color1 0%, $color2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2, GradientType=0 );
+  }
+}
+
+@mixin background-gradient-rgba($color1: null, $color2: null) {
+
+  @if ($color1 and $color2) {
+    background-image: linear-gradient(to bottom, rgba($color1,0.01) 30%, rgba($color2,0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= rgba($color1,0), endColorstr= rgba($color2,0.2), GradientType=0 );
+  }
+}

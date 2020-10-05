@@ -1,0 +1,22 @@
+<div {{ attributes.addClass('pageheader') }}>
+  <div class="blur" style="background-image: url({{ content.field_bild|render|striptags|trim }})"></div>
+  <div class="headerbox container">
+    <div class="col-12 box">
+      <h2>{{ content.field_titel }}</h2>
+      {{ content.field_text }}
+      {% if content.field_lin_k|render|trim is not empty  %}
+        <div class="field-link">
+          <a href="{{ content.field_lin_k[0]['#url']|render }}">
+            {% trans %}
+              Learn more
+            {% endtrans %}
+          </a>
+        </div>
+      {% endif %}
+      {{ content|without('field_lin_k', 'field_text', 'field_titel', 'field_bild') }}
+    </div>
+  </div>
+  <button class="btn scroll_down"><img src="/themes/custom/vanity/images/scroll-indicator.svg" alt="scroll down"></button>
+</div>
+</div>
+<div id="content"></div>

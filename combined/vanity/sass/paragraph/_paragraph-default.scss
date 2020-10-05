@@ -1,0 +1,171 @@
+.paragraph {
+  margin: 15px 0;
+  @include media-breakpoint-up(md) {
+    margin: 20px 0;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 30px 0;
+  }
+  .field--name-field-slide {
+    width: 100%;
+    max-width: 100%;
+    overflow-y: hidden;
+    @include media-breakpoint-up(sm) {
+      padding: 0 15px;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &.with-box {
+      .row {
+        @include make-col-offset(2);
+        @include make-col(8);
+      }
+    }
+  }
+  h2.paragraphtitle {
+    @include make-col(12);
+    @extend .h2;
+    margin: 0 0 10px;
+    text-align: center;
+    .anchorjs-link {
+      @extend a;
+      &:hover {
+        color: $black !important;
+      }
+    }
+  }
+  &.color-custom-white {
+    h2.paragraphtitle {
+      color: $white;
+    }
+  }
+  &.color-custom-blue {
+    h2.paragraphtitle {
+      color: $blue;
+    }
+  }
+  &.color-custom-red {
+    h2.paragraphtitle {
+      color: $red;
+    }
+  }
+
+  &.color-custom-green {
+    h2.paragraphtitle {
+      color: $green;
+    }
+  }
+  p {
+    margin: 0;
+  }
+  .field-headertext {
+    @include make-col(12);
+    padding: 0 15px 30px;
+  }
+  ul:not(.contextual-links):not(.slick-dots) {
+    background: $white;
+    color: $black;
+    list-style: none;
+    padding-left: 20px;
+    padding-right: 15px;
+    border-radius: 5px;
+    margin: 0;
+    li {
+      padding: 5px 0;
+      @include media-breakpoint-up(md) {
+        padding: 5px 0;
+      }
+      &:before {
+        content: "\2022";
+        position: absolute;
+        left: 15px;
+        font-size: 20px;
+        display: inline-block;
+        color: $black;
+      }
+    }
+  }
+  &.with-rahmen {
+    .row > div {
+      margin: 0 0 15px;
+    }
+    %innerbox {
+      position: relative;
+      display: block;
+      height: 100%;
+      box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.84);
+      overflow: hidden;
+      p:not(.hasimg),
+      h1,h2,h3,h4 {
+        padding: $spacer;
+      }
+    }
+    .field-paragraph-text {
+      background-color: $white;
+      box-shadow: 0px 3px 6px rgba($black, .3);
+      .inner {
+        @extend %innerbox;
+      }
+    }
+    .field-paragraph-left,
+    .field-paragraph-first {
+      background-color: $white;
+      background-clip: content-box;
+      .inner {
+        @extend %innerbox;
+      }
+    }
+    .field-paragraph-second,
+    .field-paragraph-third {
+      background-color: $white;
+      background-clip: content-box;
+      .inner {
+        @extend %innerbox;
+      }
+    }
+    .field-paragraph-right,
+    .field-paragraph-fourth {
+      background-color: $white;
+      background-clip: content-box;
+      .inner {
+        @extend %innerbox;
+      }
+    }
+    @include media-breakpoint-up(sm) {
+      .row {
+        margin: 0 !important;
+      }
+      .field-paragraph-text {
+        padding: 0 !important;
+      }
+      .field-paragraph-left,
+      .field-paragraph-first {
+        padding: 0 15px 0 0 !important;
+      }
+      .field-paragraph-second,
+      .field-paragraph-third {
+        padding: 0 15px;
+        p.hasimg {
+          width: calc(100% + 15px);
+        }
+      }
+      &.paragraph--type--three-columns {
+        .field-paragraph-third {
+          padding: 0 0 0 15px !important;
+        }
+      }
+      .field-paragraph-right,
+      .field-paragraph-fourth {
+        padding: 0 0 0 15px !important;
+      }
+    }
+  }
+}
+.paragraph--type--image {
+  .container {
+    @include media-breakpoint-down(md) {
+      max-width: 992px !important;
+      padding: 0;
+    }
+  }
+}

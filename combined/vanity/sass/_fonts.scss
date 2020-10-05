@@ -1,0 +1,116 @@
+body,
+.defaultfont {
+  color: $black;
+  font: {
+    family: "Roboto";
+    size: 18px;
+    weight: 300;
+  }
+  line-height: 24px;
+}
+
+strong,
+b {
+  font: {
+    weight: 700;
+  }
+}
+
+.invert {
+  color: $white;
+}
+
+.red {
+  color: $red;
+}
+
+h1, .h1 {
+  color: $black;
+  font: {
+    size: 32px;
+    weight: 300;
+  }
+  line-height: 40px;
+
+  @include media-breakpoint-up(lg) {
+    font: {
+      size: 42px;
+    }
+    line-height: 51px;
+  }
+}
+
+h2, .h2 {
+  color: $black;
+  font: {
+    size: 26px;
+    weight: 300;
+  }
+  line-height: 34px;
+
+  @include media-breakpoint-up(lg) {
+    font: {
+      size: 34px;
+    }
+    line-height: 42px;
+  }
+}
+
+h3, .h3 {
+  color: $black;
+  font: {
+    size: 20px;
+    weight: 700;
+  }
+  line-height: 26px;
+
+  @include media-breakpoint-up(lg) {
+    font: {
+      size: 24px;
+    }
+    line-height: 29px;
+  }
+}
+
+a {
+  color: $green;
+  font: {
+    size: 18px;
+    weight: 300;
+  }
+  text-decoration: none;
+  &:hover {
+    color: $green;
+    text-decoration: none;
+  }
+}
+
+.btn-green {
+  display: inline-block;
+  color: $white;
+  font: {
+    weight: 700;
+  }
+  background: $green;
+  box-shadow: 0 3px 6px rgba($black,.3);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn-ghost {
+  display: inline-block;
+  color: $primary;
+  background: $white;
+  box-shadow: 0 3px 6px rgba($black,.3);
+  font: {
+    weight: 700;
+  }
+  border: 3px solid $primary;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
