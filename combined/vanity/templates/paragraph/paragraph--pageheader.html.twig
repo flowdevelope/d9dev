@@ -4,16 +4,10 @@
     <div class="col-12 box">
       <h2>{{ content.field_titel }}</h2>
       {{ content.field_text }}
-      {% if content.field_lin_k|render|trim is not empty  %}
-        <div class="field-link">
-          <a href="{{ content.field_lin_k[0]['#url']|render }}">
-            {% trans %}
-              Learn more
-            {% endtrans %}
-          </a>
-        </div>
+      {% if content.field_link|render|trim is not empty  %}
+        {{ content.field_link }}
       {% endif %}
-      {{ content|without('field_lin_k', 'field_text', 'field_titel', 'field_bild') }}
+      {{ content|without('field_link', 'field_text', 'field_titel', 'field_bild') }}
     </div>
   </div>
   <button class="btn scroll_down"><img src="/themes/custom/vanity/images/scroll-indicator.svg" alt="scroll down"></button>
