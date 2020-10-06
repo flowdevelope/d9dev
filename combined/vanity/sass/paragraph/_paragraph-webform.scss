@@ -63,9 +63,9 @@
     .webform-button--submit:active,
     .webform-button--submit,
     .webform-button--preview {
-      @extend .btn-ghost;
+      @extend .btn-orange;
       float: right;
-      border-radius: 0;
+      border-radius: 5px;
       box-shadow: none !important;
       @include media-breakpoint-down(lg) {
         margin-right: 0;
@@ -73,8 +73,8 @@
     }
 
     input, textarea {
-      background: $gray-100;
-      border: none;
+      background: $cyan;
+      border: 2px solid $primary;
       border-radius: 0px !important;
       @extend .defaultfont;
     }
@@ -84,8 +84,8 @@
     }
     select,
     .select2 {
-      background: $gray-100;
-      border: none;
+      background: $cyan;
+      border: 2px solid $primary;
       border-radius: 0px !important;
       outline: 0px;
       height: calc(1.5em + 0.75rem);
@@ -93,8 +93,8 @@
       overflow-x: hidden;
     }
     .select2-container--default .select2-selection--single {
-      background-color: $gray-100;
-      border: none;
+      background-color: $cyan;
+      border: 2px solid $primary;
       height: calc(1.5em + 0.75rem);
       padding: 5px 0 0;
     }
