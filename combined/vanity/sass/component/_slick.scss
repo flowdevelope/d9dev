@@ -36,17 +36,17 @@
 .slick-prev {
   display: none !important;
   position: absolute;
-  left: 10px !important;
+  left: 100px !important;
   top: 40%;
   border: none;
   background: transparent;
   z-index: 2;
   i {
-    color:$red;
+    color:$white;
     font: {
-      size: 30px;
+      size: 50px;
     }
-    border: 2px solid $red;
+
     border-radius: 50%;
     padding: 5px 11px 5px 7px;
   }
@@ -57,17 +57,17 @@
 .slick-next {
   display: none !important;
   position: absolute;
-  right: 10px !important;
+  right: 100px !important;
   top: 40%;
   border: none;
   background: transparent;
   z-index: 2;
   i {
-    color:$red;
+    color:$white;
     font: {
-      size: 30px;
+      size: 50px;
     }
-    border: 2px solid $red;
+
     border-radius: 50%;
     padding: 5px 5px 5px 12px;
   }

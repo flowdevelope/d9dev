@@ -1,0 +1,18 @@
+{%
+  set classes = [
+  'leistungen',
+  'slider',
+]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+
+      {% if content.field_paragraph_title is not empty %}
+        <div><h2 id="{{ title_attributes.id|clean_class }}" class="{{ title_attributes.class }}">{{ content.field_paragraph_title|render|striptags|trim }}</h2></div>
+      {% endif %}
+      {{ content.field_leistungen }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

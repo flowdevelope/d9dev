@@ -3,10 +3,10 @@ body,
   color: $black;
   font: {
     family: "Rokkitt",sans-serif;
-    size: 18px;
+    size: 25px;
     weight: 400;
   }
-  line-height: 24px;
+  line-height: 33px;
 }
 
 strong,
@@ -24,6 +24,10 @@ b {
   color: $red;
 }
 
+.yellow {
+  color: $yellow;
+}
+
 h1, .h1 {
   color: $black;
   font: {
@@ -34,9 +38,9 @@ h1, .h1 {
 
   @include media-breakpoint-up(lg) {
     font: {
-      size: 42px;
+      size: 63px;
     }
-    line-height: 51px;
+    line-height: 71px;
   }
 }
 
@@ -50,9 +54,9 @@ h2, .h2 {
 
   @include media-breakpoint-up(lg) {
     font: {
-      size: 34px;
+      size: 63px;
     }
-    line-height: 42px;
+    line-height: 71px;
   }
 }
 
@@ -66,18 +70,19 @@ h3, .h3 {
 
   @include media-breakpoint-up(lg) {
     font: {
-      size: 24px;
+      size: 40px;
     }
-    line-height: 29px;
+    line-height: 42px;
   }
 }
 
-a {
+a:not(.toolbar-icon) {
   color: $primary;
   font: {
-    size: 18px;
-    weight: 300;
+    size: 25px;
+    weight: 400;
   }
+  line-height: 33px;
   text-decoration: none;
   &:hover {
     color: $primary;
@@ -121,8 +126,10 @@ a {
   background: $orange;
   box-shadow: 0 3px 6px rgba($black,.3);
   font: {
+    size: 30px;
     weight: 600;
   }
+  line-height: 32px;
   border: 3px solid $orange;
   padding: 10px 20px;
   text-align: center;

@@ -53,7 +53,7 @@ footer {
     position: relative;
     @include media-breakpoint-up(lg) {
       position: absolute;
-      bottom: -10px;
+      bottom: -15px;
       right: 0;
     }
   }

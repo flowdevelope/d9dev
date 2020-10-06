@@ -73,14 +73,14 @@ header nav {
           margin: 0 !important;
           padding: 15px;
           a {
-            color: $black;
+            color: $black !important;
             font: {
-              size: 18px;
+              size: 25px;
               weight: 400;
             }
-            line-height: 24px;
+            line-height: 33px;
             &:hover {
-              color: $black;
+              color: $black !important;
             }
           }
         }
@@ -93,13 +93,13 @@ header nav {
       a,
       a:hover,
       span {
-        color: $black;
+        color: $black !important;
         padding: 0 0 10px;
         font: {
-          size: 20px;
+          size: 25px;
           weight: 400;
         }
-        line-height: 26px;
+        line-height: 33px;
         text-transform: uppercase;
         cursor: pointer;
       }
@@ -109,10 +109,10 @@ header nav {
         a {
           color: $black !important;
           font: {
-            size: 26px !important;
-            weight: 700 !important;
+            size: 256px !important;
+            weight: 600 !important;
           }
-          line-height: 34px !important;
+          line-height: 33px !important;
 
           @include media-breakpoint-up(lg) {
             font: {
@@ -190,9 +190,9 @@ header nav {
         span {
           color: $black !important;
           font: {
-            size: 24px !important;
+            size: 25px !important;
           }
-          line-height: 26px !important;
+          line-height: 33px !important;
           cursor: pointer;
         }
         h2 {
@@ -213,9 +213,9 @@ footer nav {
       text-align: center;
       padding:  0 20px 0 0;
       a, a:hover {
-        color: $white;
-        font-size: 18px;
-        line-height: 24px;
+        color: $white !important;
+        font-size: 25px;
+        line-height: 33px;
         text-decoration: none;
       }
     }

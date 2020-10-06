@@ -9,14 +9,14 @@
         }, 2000);
       });
 
-      var menu = $(".block-infoblock").html();
+      var menu = $("#block-infoblock").html();
       $(window).on('load resize', function () {
         var win = $( window ).width();
         if (win < 992 ) {
           $(".drilldown").html(menu);
-          $(".block-infoblock").html('');
+          $("#block-infoblock").html('');
         } else {
-          $(".block-infoblock").html(menu);
+          $("#block-infoblock").html(menu);
           $(".drilldown").html('');
         }
       });
