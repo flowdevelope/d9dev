@@ -1,0 +1,45 @@
+.sliderreferenz {
+  @include make-col(12);
+  position: relative;
+  background: $back2;
+  .sliderinner {
+    .sliderimage {
+      img {
+        width: auto;
+        margin: 0 auto;
+        justify-items: center;
+      }
+    }
+    .content {
+      .name {
+        font: {
+          weight: bold;
+          size: 22px;
+        }
+        line-height: 24px;
+        @include media-breakpoint-up(md) {
+          font: {
+            size: 18px;
+          }
+          line-height: 22px;
+        }
+      }
+
+      .company {
+        font: {
+          weight: normal;
+          size: 22px;
+        }
+        line-height: 24px;
+        @include media-breakpoint-up(md) {
+          font: {
+            size: 18px;
+          }
+          line-height: 22px;
+        }
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+
