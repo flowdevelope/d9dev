@@ -1,5 +1,7 @@
 .paragraph {
   &.paragraph--type--webform {
+    padding: 0 0 30px;
+    position: relative;
     .webform-progress {
       margin-left: -26%;
       margin-right: -26%;
@@ -60,8 +62,6 @@
 
     .webform-button--next,
     .webform-button--next:active,
-    .webform-button--submit:active,
-    .webform-button--submit,
     .webform-button--preview {
       @extend .btn-orange;
       float: right;
@@ -70,6 +70,14 @@
       @include media-breakpoint-down(lg) {
         margin-right: 0;
       }
+    }
+    .webform-button--submit:active,
+    .webform-button--submit {
+      @extend .btn-orange;
+      /* float: right; */
+      position: absolute;
+      left: 42%;
+      margin: -22px 0;
     }
 
     input, textarea {

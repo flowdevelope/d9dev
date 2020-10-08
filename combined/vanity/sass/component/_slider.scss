@@ -1,5 +1,29 @@
-.slider {
+.slider-wrapper {
+  padding: 15px 0;
   background: $back2;
+
+  .slider {
+    padding: 0 15px;
+    @include media-breakpoint-up(lg) {
+      padding: 0 200px;
+    }
+  }
+
+  .field-leistungen {
+    position: relative;
+    padding: 0 20px;
+  }
+  .field-icon {
+    img {
+      max-height: 150px;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+/**
+.slider {
+
   padding: 30px 0;
   .slick-list {
     max-width: 80%;
@@ -25,5 +49,5 @@
     }
   }
 }
-
+*/
 

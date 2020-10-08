@@ -2,13 +2,6 @@
   Drupal.behaviors.Vanity = {
     attach: function (context, settings) {
 
-      $('.topnav a', context).on('click', function(e){
-        var target = $(this).attr('href');
-        $('html, body').animate({
-          scrollTop: $(target).offset().top -100
-        }, 2000);
-      });
-
       var menu = $("#block-infoblock").html();
       $(window).on('load resize', function () {
         var win = $( window ).width();
@@ -28,13 +21,12 @@
           var proheight = $('.projektheader .headerbox').innerHeight() - 150;
           $('.projektheader').css('min-height', proheight + 'px');
           $('.projektheader .blur').css('min-height', proheight + 'px');
-          $('.projektheader .blur').css('max-height', proheight + 'px');
         } else {
           $('.projektheader').css('min-height',win.height() - 150);
           $('.blur').css('min-height', win.height() - 150);
         }
         if (win.width() < 669) {
-          var pheight = $('.pageheader .headerbox').innerHeight() - 45;
+          var pheight = $('.pageheader .headerbox').innerHeight() + 100;
           $('.pageheader').css('min-height', pheight + 'px');
           $('.pageheader .blur').css('min-height', pheight + 'px');
         } else {
@@ -54,6 +46,16 @@
           }
           i++;
         });
+        $('.topnav a', context).on('click touch', function(e){
+          var target = $(this).attr('href');
+          $('html, body').animate({
+            scrollTop: $(target).offset().top -100
+          }, 2000);
+          if (win.width() < 1023) {
+            $('.overlay').toggle('slow');
+            $('.navbar-collapse').removeClass('show');
+          }
+        });
       });
 
       $('.scroll_down').click(function() {
@@ -62,6 +64,9 @@
         }, 2000);
       });
 
+      $('.navbar-toggle', context).on('click touch', function(e){
+        $('.overlay').toggle('slow');
+      });
 
     }
   }

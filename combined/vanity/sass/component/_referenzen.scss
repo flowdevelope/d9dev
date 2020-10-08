@@ -2,7 +2,17 @@
   @include make-col(12);
   position: relative;
   background: $back2;
+  padding: 15px 0 0;
+  .slick-list {
+    max-width: 80%;
+    margin: 0 50px;
+    overflow: hidden;
+    @include media-breakpoint-up(lg) {
+      margin: 0 200px;
+    }
+  }
   .sliderinner {
+    padding: 0 15px;
     .sliderimage {
       img {
         width: auto;
@@ -10,18 +20,18 @@
         justify-items: center;
       }
     }
-    .content {
+    .slidercontent {
       .name {
         font: {
           weight: bold;
-          size: 22px;
+          size: 35px;
         }
-        line-height: 24px;
+        line-height: 40px;
         @include media-breakpoint-up(md) {
           font: {
-            size: 18px;
+            size: 35px;
           }
-          line-height: 22px;
+          line-height: 40px;
         }
       }
 

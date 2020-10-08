@@ -1,0 +1,389 @@
+<?php
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+
+use Drupal\editor\Entity\Editor;
+/*
+function site_paragraphs_editor_js_settings_alter(array &$settings) {
+  $formats = ['basic_html', 'full_html'];
+  foreach ($formats as $format) {
+    $settings['editor']['formats'][$format]['editorSettings']['allowedContent']['span']['attributes'] = '!style';
+  }
+}
+*/
+
+function site_paragraphs_paragraph_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  $build['#attached']['library'][] = 'site_paragraphs/anchor';
+  $build['#attached']['drupalSettings'] = [
+    'showAnchors' => \Drupal::currentUser()->hasPermission('administer content'),
+  ];
+}
+
+/**
+ * Implements hook_classier_paragraphs_form().
+ */
+function site_paragraphs_classier_paragraphs_form($entity_type, $bundle, $item) {
+  $element = [];
+  switch ($bundle) {
+    case 'one_column':
+      $element['background'] = _site_paragraphs_classier_background($item);
+      //$element['border'] = _site_paragraphs_border($item);
+      $element['color'] = _site_paragraphs_color($item);
+      $element['center'] = _site_paragraphs_center($item);
+      $element['nomargin'] = _site_paragraphs_nomargin($item);
+      //$element['back'] = _site_paragraphs_back($item, 1);
+      //$element['shadow'] = _site_paragraphs_shadow($item, 1);
+      //$element['centertext'] = _site_paragraphs_centertext($item, 1);
+//      $element['edge2edge'] = _site_paragraphs_edge2edge($item);
+//      $element['min-height'] = [
+//        '#type' => 'checkbox',
+//        '#title' => 'Mindesthöhe',
+//        '#description' => t('Wenn Sie dieses Kontrollkästchen aktivieren, wird die minimale Höhe des Hintergrundbild auf 570px festgelegt'),
+//        '#default_value' => isset($item->getValue()['min-height']) ? $item->getValue()['min-height'] : 0,
+//      ];
+      break;
+    case 'four_columns':
+      $element['background'] = _site_paragraphs_classier_background($item);
+      //$element['border'] = _site_paragraphs_border($item);
+      $element['color'] = _site_paragraphs_color($item);
+      $element['center'] = _site_paragraphs_center($item);
+      $element['nomargin'] = _site_paragraphs_nomargin($item);
+      //$element['back'] = _site_paragraphs_back($item, 4);
+      //$element['shadow'] = _site_paragraphs_shadow($item, 4);
+      //$element['centertext'] = _site_paragraphs_centertext($item, 4);
+//      $element['edge2edge'] = _site_paragraphs_edge2edge($item);
+      break;
+
+    case 'two_columns':
+      $element['layout'] = [
+        '#type' => 'radios',
+        '#title' => 'Layout',
+        '#options' => [
+          'layout-50-50' => 'Verhältnis eins zu eins (50%/50%)',
+          'layout-66-33' => 'Verhältnis zwei zu eins (66%/33%)',
+          'layout-75-25' => 'Verhältnis drei zu eins (75%/25%)',
+          'layout-25-75' => 'Verhältnis eins zu drei (25%/75%)',
+        ],
+        '#default_value' => isset($item->layout) ? $item->layout : 'layout-50-50',
+      ];
+      $element['background'] = _site_paragraphs_classier_background($item);
+      //$element['border'] = _site_paragraphs_border($item);
+      $element['color'] = _site_paragraphs_color($item);
+      $element['center'] = _site_paragraphs_center($item);
+      $element['nomargin'] = _site_paragraphs_nomargin($item);
+      //$element['back'] = _site_paragraphs_back($item, 2);
+      //$element['shadow'] = _site_paragraphs_shadow($item, 2);
+      //$element['centertext'] = _site_paragraphs_centertext($item, 2);
+//      $element['edge2edge'] = _site_paragraphs_edge2edge($item);
+      break;
+
+    case 'three_columns':
+//      $element['title'] = [
+//        '#type' => 'radios',
+//        '#title' => 'Titel',
+//        '#options' => [
+//          'title-default' => 'Standard (grün)',
+//          'title-alt' => 'Invertiert (weiß)',
+//        ],
+//        '#default_value' => isset($item->title) ? $item->title : 'title-default',
+//      ];
+      $element['background'] = _site_paragraphs_classier_background($item);
+      //$element['border'] = _site_paragraphs_border($item);
+      $element['color'] = _site_paragraphs_color($item);
+      $element['center'] = _site_paragraphs_center($item);
+      $element['nomargin'] = _site_paragraphs_nomargin($item);
+      //$element['back'] = _site_paragraphs_back($item, 3);
+      //$element['shadow'] = _site_paragraphs_shadow($item, 3);
+      //$element['centertext'] = _site_paragraphs_centertext($item, 3);
+//      $element['edge2edge'] = _site_paragraphs_edge2edge($item);
+      break;
+  }
+
+  return $element;
+}
+
+function _site_paragraphs_edge2edge($item) {
+
+   return [
+     '#type' => 'checkboxes',
+     '#title' => 'edge2edge',
+     '#options' => [
+       'edge2edge' => 'Edge-2-Edge',
+     ],
+     '#title_display' => 'invisible',
+     '#default_value' => ['edge2edge' => !empty($item->getValue()['edge2edge']['edge2edge']) ? $item->getValue()['edge2edge']['edge2edge'] : ''],
+   ];
+}
+
+function _site_paragraphs_center(\Drupal\classier_paragraphs\Plugin\Field\FieldType\ClassierParagraphsItem $item) {
+
+  $options = [];
+  $center = !empty($item->getValue()['center']) ? $item->getValue()['center'] : [];
+  $default_value = [];
+
+
+  $options['with-box'] = 'Mit Offset (LG/XL)';
+
+  foreach ($center as $key => $value) {
+    $default_value[$value] = $value;
+  }
+
+
+  return [
+    '#type' => 'checkboxes',
+    '#title' => 'Mit Offset',
+    '#options' => $options,
+    '#default_value' => $default_value,
+  ];
+
+}
+
+function _site_paragraphs_nomargin(\Drupal\classier_paragraphs\Plugin\Field\FieldType\ClassierParagraphsItem $item) {
+
+  $options = [];
+  $nomargin = !empty($item->getValue()['nomargin']) ? $item->getValue()['nomargin'] : [];
+  $default_value = [];
+
+
+  $options['nomargin'] = 'Ohne Abstand';
+
+  foreach ($nomargin as $key => $value) {
+    $default_value[$value] = $value;
+  }
+
+
+  return [
+    '#type' => 'checkboxes',
+    '#title' => 'Ohne Abstand',
+    '#options' => $options,
+    '#default_value' => $default_value,
+  ];
+
+}
+
+function _site_paragraphs_classier_background($item, $bundle = NULL) {
+  $return = [
+    '#type' => 'radios',
+    '#title' => 'Hintergrund',
+    '#options' => [
+      'background-none' => 'keiner / weiß',
+      'background-signature-primary' => 'Primärfarbe',
+      'background-signature-secondary' => 'Sekundärfarbe',
+      'background-signature-custom' => 'Benutzerdefiniert (hellgrau)',
+      'background-signature-custom2' => 'Benutzerdefiniert (grau)',
+      'background-custom' => 'individuelles Bild',
+    ],
+    '#default_value' => isset($item->background) ? $item->background : 'background-none',
+  ];
+  if ($bundle) {
+    $return['#options']['background-only'] = 'individuelles Bild mit min. Höhe';
+  }
+
+  return $return;
+}
+
+function _site_paragraphs_color($item, $bundle = NULL) {
+
+  $return = [
+    '#type' => 'select',
+    '#title' => 'Überschrift',
+    '#options' => [
+      'color-none' => 'keiner / normal',
+      'color-custom-green' => 'grün',
+      'color-custom-white' => 'weiß',
+      'color-custom-red' => 'rot',
+      'color-custom-yellow' => 'gelb',
+      'color-custom-blue' => 'blau',
+    ],
+    '#default_value' => isset($item->color) ? $item->color : 'color-none',
+  ];
+
+  return $return;
+}
+
+function _site_paragraphs_border(\Drupal\classier_paragraphs\Plugin\Field\FieldType\ClassierParagraphsItem $item) {
+
+  $options = [];
+  $border = !empty($item->getValue()['border']) ? $item->getValue()['border'] : [];
+  $default_value = [];
+
+
+  $options['with-border'] = 'Mit Hintergrund';
+
+  foreach ($border as $key => $value) {
+    $default_value[$value] = $value;
+  }
+
+
+  return [
+    '#type' => 'checkboxes',
+    '#title' => 'Rahmen',
+    '#options' => $options,
+    '#default_value' => $default_value,
+  ];
+
+}
+
+function _site_paragraphs_back(\Drupal\classier_paragraphs\Plugin\Field\FieldType\ClassierParagraphsItem $item, int $count) {
+
+  $options = [];
+  $back = !empty($item->getValue()['back']) ? $item->getValue()['back'] : [];
+  $default_value = [];
+
+  for ($i = 1; $i<=$count; $i++) {
+    $options['back-' . $i] = 'Boxbackground ' . $i;
+  }
+
+  foreach ($back as $key => $value) {
+    $default_value[$value] = $value;
+  }
+
+
+  return [
+    '#type' => 'checkboxes',
+    '#title' => 'Boxbackground',
+    '#options' => $options,
+    '#default_value' => $default_value,
+  ];
+
+}
+
+function _site_paragraphs_shadow(\Drupal\classier_paragraphs\Plugin\Field\FieldType\ClassierParagraphsItem $item, int $count) {
+
+  $options = [];
+  $shadow = !empty($item->getValue()['shadow']) ? $item->getValue()['shadow'] : [];
+  $default_value = [];
+
+  for ($i = 1; $i<=$count; $i++) {
+    $options['shadow-' . $i] = 'Boxschatten ' . $i;
+  }
+
+  foreach ($shadow as $key => $value) {
+    $default_value[$value] = $value;
+  }
+
+
+  return [
+    '#type' => 'checkboxes',
+    '#title' => 'Boxschatten',
+    '#options' => $options,
+    '#default_value' => $default_value,
+  ];
+
+}
+
+function _site_paragraphs_centertext(\Drupal\classier_paragraphs\Plugin\Field\FieldType\ClassierParagraphsItem $item, int $count) {
+
+  $options = [];
+  $centertext = !empty($item->getValue()['centertext']) ? $item->getValue()['centertext'] : [];
+  $default_value = [];
+
+  for ($i = 1; $i<=$count; $i++) {
+    $options['centertext-' . $i] = 'Centertext  ' . $i;
+  }
+
+  foreach ($centertext as $key => $value) {
+    $default_value[$value] = $value;
+  }
+
+
+  return [
+    '#type' => 'checkboxes',
+    '#title' => 'Text horizontal in Mitte',
+    '#options' => $options,
+    '#default_value' => $default_value,
+  ];
+
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function site_paragraphs_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+
+  if (!empty($paragraph->backgroundImages)) {
+    if ($paragraph->hasField('field_paragraphs_appearance')) {
+      $appearance = $paragraph->field_paragraphs_appearance->first()->getValue();
+      if (isset($appearance['min-height']) && $appearance['min-height'] == 1) {
+        $variables['attributes']['style'][] = 'min-height: 570px;';
+      }
+    }
+  }
+
+    if ($paragraph->hasField('field_paragraphs_appearance') && !empty($paragraph->field_paragraphs_appearance->first())) {
+        $appearance = $paragraph->field_paragraphs_appearance->first()->getValue();
+        if (!empty($appearance['edge2edge'])) {
+            $variables['attributes']['class'][] = 'edge2edge';
+        }
+        if (!empty($appearance['border'])) {
+          foreach ($appearance['border'] as $key => $value) {
+            if ($value == 1) {
+              $variables['attributes']['class'][] = $key;
+            }
+          }
+        }
+
+        if (!empty($appearance['color'])) {
+          $variables['attributes']['class'][] = $appearance['color'];
+        }
+
+        if (!empty($appearance['back'])) {
+          foreach ($appearance['back'] as $key => $value) {
+            if ($value == 1) {
+              $variables['attributes']['class'][] = $key;
+            }
+          }
+        }
+
+        if (!empty($appearance['shadow'])) {
+          foreach ($appearance['shadow'] as $key => $value) {
+            if ($value == 1) {
+              $variables['attributes']['class'][] = $key;
+            }
+          }
+        }
+
+      if (!empty($appearance['centertext'])) {
+        foreach ($appearance['centertext'] as $key => $value) {
+          if ($value == 1) {
+            $variables['attributes']['class'][] = $key;
+          }
+        }
+      }
+
+      if (!empty($appearance['nomargin'])) {
+        foreach ($appearance['nomargin'] as $key => $value) {
+          if ($value == 'nomargin') {
+            $variables['attributes']['class'][] = $key;
+          }
+        }
+      }
+
+    }
+
+  if ($paragraph->hasField('field_paragraph_text')) {
+    if (empty($paragraph->field_paragraph_text->getValue())) {
+      $variables['attributes']['class'][] = 'textfield-empty';
+    }
+  }
+
+  if ($paragraph->hasField('field_paragraph_background')) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+
+    if (!empty($paragraph->get('field_paragraph_background')->getValue())) {
+
+      if (\Drupal::moduleHandler()->moduleExists('blazy') === true) {
+        $variables['attributes']['class'][] = 'blazy';
+        $variables['attributes']['data-src'][] = $paragraph->field_paragraph_background->entity->url();
+      } else {
+        $variables['attributes']['style'][] = 'background-image: url("' . $paragraph->field_paragraph_background->entity->url() . '")';
+
+      }
+
+      $variables['attributes']['class'][] = 'paragraph-with-background';
+    }
+  }
+}

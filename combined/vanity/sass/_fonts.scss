@@ -24,6 +24,11 @@ b {
   color: $red;
 }
 
+
+.green {
+  color: $green;
+}
+
 .yellow {
   color: $yellow;
 }
@@ -31,6 +36,7 @@ b {
 h1, .h1 {
   color: $black;
   font: {
+    family: "Rokkitt",sans-serif;
     size: 32px;
     weight: 600;
   }
@@ -47,6 +53,7 @@ h1, .h1 {
 h2, .h2 {
   color: $black;
   font: {
+    family: "Rokkitt",sans-serif;
     size: 26px;
     weight: 600;
   }
@@ -63,6 +70,7 @@ h2, .h2 {
 h3, .h3 {
   color: $black;
   font: {
+    family: "Rokkitt",sans-serif;
     size: 20px;
     weight: 600;
   }
