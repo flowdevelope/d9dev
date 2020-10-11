@@ -54,6 +54,7 @@
           if (win.width() < 1023) {
             $('.overlay').toggle('slow');
             $('.navbar-collapse').removeClass('show');
+            $('header').toggleClass('green');
           }
         });
       });
@@ -66,6 +67,7 @@
 
       $('.navbar-toggle', context).on('click touch', function(e){
         $('.overlay').toggle('slow');
+        $('header').toggleClass('green');
       });
 
     }

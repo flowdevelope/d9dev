@@ -2,7 +2,7 @@ body,
 .defaultfont {
   color: $black;
   font: {
-    family: "Rokkitt",sans-serif;
+    family:  "Roboto", sans-serif;
     size: 25px;
     weight: 400;
   }
@@ -26,7 +26,8 @@ b {
 
 
 .green {
-  color: $green;
+  color: $primary;
+  background: $primary;
 }
 
 .yellow {
@@ -37,10 +38,10 @@ h1, .h1 {
   color: $black;
   font: {
     family: "Rokkitt",sans-serif;
-    size: 32px;
+    size: 40px;
     weight: 600;
   }
-  line-height: 40px;
+  line-height: 42px;
 
   @include media-breakpoint-up(lg) {
     font: {
@@ -54,10 +55,10 @@ h2, .h2 {
   color: $black;
   font: {
     family: "Rokkitt",sans-serif;
-    size: 26px;
+    size: 40px;
     weight: 600;
   }
-  line-height: 34px;
+  line-height: 42px;
 
   @include media-breakpoint-up(lg) {
     font: {
@@ -71,10 +72,10 @@ h3, .h3 {
   color: $black;
   font: {
     family: "Rokkitt",sans-serif;
-    size: 20px;
+    size: 30px;
     weight: 600;
   }
-  line-height: 26px;
+  line-height: 32px;
 
   @include media-breakpoint-up(lg) {
     font: {
@@ -102,7 +103,7 @@ a:not(.toolbar-icon) {
   display: inline-block;
   color: $white;
   font: {
-    weight: 600;
+    weight: 400;
   }
   background: $primary;
   box-shadow: 0 3px 6px rgba($black,.3);
@@ -120,7 +121,7 @@ a:not(.toolbar-icon) {
   background: $white;
   box-shadow: 0 3px 6px rgba($black,.3);
   font: {
-    weight: 600;
+    weight: 400;
   }
   border: 3px solid $primary;
   padding: 10px 20px;
@@ -135,7 +136,7 @@ a:not(.toolbar-icon) {
   box-shadow: 0 3px 6px rgba($black,.3);
   font: {
     size: 30px;
-    weight: 600;
+    weight: 400;
   }
   line-height: 32px;
   border: 3px solid $orange;

@@ -77,7 +77,8 @@ footer {
 
   #block-copyright {
     position: relative;
-    max-width: 350px;
+    max-width: 500px;
+    font-sze: 16px;
     @include media-breakpoint-up(lg) {
       position: absolute;
       bottom: -15px;
