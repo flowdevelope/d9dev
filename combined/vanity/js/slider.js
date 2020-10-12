@@ -13,8 +13,8 @@
         focusOnSelect: true,
         adaptiveHeight: false,
         centerMode: false,
-        prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-chevron-left' aria-hidden='true'></i></i></button>",
-        nextArrow: "<button type='button' class='slick-next pull-right'><i class='fa fa-chevron-right' aria-hidden='true'></button>",
+        prevArrow: "<img class='slick-prev' src='/themes/custom/vanity/images/Pfeil_links.svg'>",
+        nextArrow: "<img class='slick-next' src='/themes/custom/vanity/images/Pfeil_rechts.svg'>",
         responsive: [
           {
             breakpoint: 1200,
@@ -44,9 +44,9 @@
         variableWidth: false,
         focusOnSelect: true,
         adaptiveHeight: true,
+        prevArrow: " ",
+        nextArrow: " ",
         centerMode: false,
-        prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-chevron-left' aria-hidden='true'></i></i></button>",
-        nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-chevron-right' aria-hidden='true'></button>",
         responsive: [
           {
             breakpoint: 600,

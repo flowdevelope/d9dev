@@ -24,15 +24,9 @@
       .name {
         font: {
           weight: bold;
-          size: 35px;
+          size: 20px;
         }
-        line-height: 40px;
-        @include media-breakpoint-up(md) {
-          font: {
-            size: 35px;
-          }
-          line-height: 40px;
-        }
+        line-height: 24px;
       }
 
       .company {

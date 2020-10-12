@@ -89,13 +89,13 @@
         padding: 5px 0;
       }
       &:before {
-        content: "\f00c";
-        font-family: "FontAwesome";
-        font-size: 50px;
+        content: "";
+        background: url('/themes/custom/vanity/images/WYSIWYG_Template.svg');
+        height: 65px;
+        width: 65px;
         position: absolute;
-        left: -25px;
+        left: -40px;
         display: inline-block;
-        color: $orange;
       }
     }
   }
