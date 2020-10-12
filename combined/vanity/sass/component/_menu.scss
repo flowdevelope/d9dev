@@ -206,9 +206,9 @@ header nav {
         span {
           color: $white !important;
           font: {
-            size: 25px !important;
+            size: 20px !important;
           }
-          line-height: 33px !important;
+          line-height: 25px !important;
           cursor: pointer;
         }
         h2 {
@@ -231,8 +231,8 @@ footer nav {
       a, a:hover {
         color: $white !important;
         font-family: "Rokkitt",sans-serif;
-        font-size: 25px;
-        line-height: 33px;
+        font-size: 20px;
+        line-height: 24px;
         text-decoration: none;
       }
     }
@@ -251,6 +251,7 @@ footer nav {
   }
   span {
     font-family: "Rokkitt",sans-serif;
+    font-size: 17px;
     margin: 0 30px;
     &:last-child {
       margin: 0;

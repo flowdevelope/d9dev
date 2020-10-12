@@ -52,7 +52,7 @@
             <div class="row">
                 {% block content %}
                   {% if content.field_paragraph_title is not empty %}
-                    <h2 id="{{ title_attributes.id|clean_class }}" class="{{ title_attributes.class }}">{{ content.field_paragraph_title|render|striptags|trim }}</h2>
+                    <h3 id="{{ title_attributes.id|clean_class }}" class="{{ title_attributes.class }}">{{ content.field_paragraph_title|render|striptags|trim }}</h3>
                   {% endif %}
                   {{ content|without('field_paragraph_title') }}
                 {% endblock %}

@@ -135,11 +135,13 @@ a:not(.toolbar-icon) {
   background: $orange;
   box-shadow: 0 3px 6px rgba($black,.3);
   font: {
-    size: 20px;
+    family: "Rokkitt",sans-serif;
+    size: 30px;
     weight: 400;
   }
   line-height: 24px;
   border: 3px solid $orange;
+  border-radius: 5px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;

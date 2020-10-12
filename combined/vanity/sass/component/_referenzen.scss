@@ -23,7 +23,7 @@
     .slidercontent {
       .name {
         font: {
-          weight: bold;
+          weight: 700;
           size: 20px;
         }
         line-height: 24px;
@@ -32,15 +32,9 @@
       .company {
         font: {
           weight: normal;
-          size: 22px;
+          size: 20px;
         }
         line-height: 24px;
-        @include media-breakpoint-up(md) {
-          font: {
-            size: 18px;
-          }
-          line-height: 22px;
-        }
         margin: 0 0 10px;
       }
     }
