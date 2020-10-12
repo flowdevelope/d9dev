@@ -37,7 +37,8 @@ header nav {
   }
   .logo,
   .biglogo {
-    float: left;
+    position: relative;
+    left: 10px;
     padding: 5px 0;
     width: 120px;
     height: 120px;
@@ -45,16 +46,23 @@ header nav {
       background: #fff;
       max-width: 35%;
       margin: 1px 5px;
-      @include media-breakpoint-up(md) {
-        max-width: 45%;
-        margin: 0;
-      }
       @include media-breakpoint-up(lg) {
         height: 171px;
-        max-width: 60%;
+        max-width: 70%;
       }
     }
     @include media-breakpoint-up(md) {
+      left: 5px;
+      top: 10px;
+      max-width: 45%;
+      margin: 0;
+    }
+    @include media-breakpoint-up(lg) {
+      left: 0;
+      top: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      top: 0;
       padding: 0 0 0 35px;
     }
   }
@@ -243,9 +251,14 @@ footer nav {
 }
 #block-infoblock {
   display: block;
-  position: absolute;
-  right: 15px;
-  top: 15px;
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    right: 65px;
+    top: 15px;
+  }
+  @include media-breakpoint-up(xl) {
+    right: 295px;
+  }
   .info {
     width: 100%;
   }

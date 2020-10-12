@@ -36,7 +36,10 @@
 .slick-prev {
   display: none !important;
   position: absolute;
-  left: 180px !important;
+  left: 10px !important;
+  @include media-breakpoint-up(lg) {
+    left: 180px !important;
+  }
   top: 40%;
   border: none;
   background: transparent;
@@ -50,7 +53,10 @@
 .slick-next {
   display: none !important;
   position: absolute;
-  right: 180px !important;
+  right :25px;
+  @include media-breakpoint-up(lg) {
+    right: 180px !important;
+  }
   top: 40%;
   border: none;
   background: transparent;
