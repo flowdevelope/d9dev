@@ -1,0 +1,12 @@
+form {
+  label.option {
+    @extend .form-check-label;
+  }
+
+  .form-control {
+    &:focus {
+     box-shadow: none;
+    }
+  }
+
+}

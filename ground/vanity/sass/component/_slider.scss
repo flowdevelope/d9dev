@@ -1,0 +1,67 @@
+.slider-wrapper {
+  padding: 15px 0;
+  background: $back2;
+
+  .slider {
+    padding: 0 15px;
+    @include media-breakpoint-up(lg) {
+      padding: 0 200px;
+    }
+  }
+
+  .field-leistungen {
+    position: relative;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .field-beschreibung {
+    strong {
+      font: {
+        family: "Rokkitt",sans-serif;
+        size: 25px;
+        weight: 600;
+      }
+      line-height: 28px;
+    }
+    position: relative;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .field-icon {
+    img {
+      max-height: 150px;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+/**
+.slider {
+
+  padding: 30px 0;
+  .slick-list {
+    max-width: 80%;
+    margin: 0 50px;
+    overflow: hidden;
+    @include media-breakpoint-up(lg) {
+      margin: 0 200px;
+    }
+  }
+  .field-leistungen {
+    @include make-row();
+    position: relative;
+    min-width: 320px;
+    margin-right: 15px!important;
+    margin-left: 15px !important;
+  }
+  .leistung {
+    .field-icon {
+      max-width: 200px;
+    }
+    .field-beschreibung {
+      width: 320px;
+    }
+  }
+}
+*/
+

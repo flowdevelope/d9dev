@@ -1,0 +1,46 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.one_column.field_paragraph_aaa_summary
+    - field.field.paragraph.one_column.field_paragraph_background
+    - field.field.paragraph.one_column.field_paragraph_text
+    - field.field.paragraph.one_column.field_paragraph_title
+    - field.field.paragraph.one_column.field_paragraphs_appearance
+    - paragraphs.paragraphs_type.one_column
+  module:
+    - paragraphs_background_image
+    - text
+id: paragraph.one_column.default
+targetEntityType: paragraph
+bundle: one_column
+mode: default
+content:
+  field_paragraph_background:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: paragraphs_background_image
+    region: content
+  field_paragraph_text:
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+    region: content
+  field_paragraph_title:
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    label: hidden
+    region: content
+hidden:
+  created: true
+  field_paragraph_aaa_summary: true
+  field_paragraphs_appearance: true
+  uid: true

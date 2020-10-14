@@ -99,6 +99,11 @@ function site_paragraphs_classier_paragraphs_form($entity_type, $bundle, $item) 
       //$element['centertext'] = _site_paragraphs_centertext($item, 3);
 //      $element['edge2edge'] = _site_paragraphs_edge2edge($item);
       break;
+
+    case 'image':
+      $element['nomargin'] = _site_paragraphs_nomargin($item);
+
+      braek;
   }
 
   return $element;
@@ -356,7 +361,7 @@ function site_paragraphs_preprocess_paragraph(&$variables) {
 
       if (!empty($appearance['nomargin'])) {
         foreach ($appearance['nomargin'] as $key => $value) {
-          if ($value == 'nomargin') {
+          if (!empty($value)) {
             $variables['attributes']['class'][] = $key;
           }
         }
