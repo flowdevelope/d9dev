@@ -19,7 +19,7 @@
 
           if (target.length) {
             $('html,body').animate({
-              scrollTop: target.offset().top - 200
+              scrollTop: target.offset().top - 10
             }, 500);
             return false;
           }

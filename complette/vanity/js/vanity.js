@@ -5,7 +5,7 @@
       $('.topnav a', context).on('click touch', function(e){
         var target = $(this).attr('href');
         $('html, body').animate({
-          scrollTop: $(target).offset().top + 130
+          scrollTop: $(target).offset().top - 10
         }, 2000);
       });
 
