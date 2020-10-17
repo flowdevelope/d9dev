@@ -1,0 +1,89 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.four_columns.field_paragraph_aaa_summary
+    - field.field.paragraph.four_columns.field_paragraph_background
+    - field.field.paragraph.four_columns.field_paragraph_first
+    - field.field.paragraph.four_columns.field_paragraph_fourth
+    - field.field.paragraph.four_columns.field_paragraph_second
+    - field.field.paragraph.four_columns.field_paragraph_third
+    - field.field.paragraph.four_columns.field_paragraph_title
+    - field.field.paragraph.four_columns.field_paragraphs_appearance
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.four_columns
+  module:
+    - classier_paragraphs
+    - svg_image
+    - text
+id: paragraph.four_columns.default
+targetEntityType: paragraph
+bundle: four_columns
+mode: default
+content:
+  field_paragraph_aaa_summary:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_background:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_paragraph_first:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_paragraph_fourth:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_paragraph_second:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_paragraph_third:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_paragraph_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraphs_appearance:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: classier_paragraphs_form
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

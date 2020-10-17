@@ -1,0 +1,23 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map.field_map_adresse
+    - field.field.paragraph.map.field_mapstyle
+    - field.field.paragraph.map.field_marker
+    - paragraphs.paragraphs_type.map
+id: paragraph.map.default
+targetEntityType: paragraph
+bundle: map
+mode: default
+content:
+  field_map_adresse:
+    type: basic_string
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_mapstyle: true
+  field_marker: true

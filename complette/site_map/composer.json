@@ -1,0 +1,8 @@
+{
+    "name": "flowconcept/site_map",
+    "minimum-stability": "stable",
+    "require": {
+        "geocoder-php/google-maps-provider": "4.4",
+        "drupal/geocoder": "^3.5"
+    }
+}

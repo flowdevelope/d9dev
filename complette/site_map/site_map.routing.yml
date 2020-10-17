@@ -1,0 +1,7 @@
+my_module.content:
+  path: '/map'
+  defaults:
+    _controller: 'Drupal\site_map\Controller\SiteMapController::content'
+    _title: 'Site Map'
+  requirements:
+    _permission: 'access content'

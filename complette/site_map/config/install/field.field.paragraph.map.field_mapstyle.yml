@@ -1,0 +1,18 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mapstyle
+    - paragraphs.paragraphs_type.map
+id: paragraph.map.field_mapstyle
+field_name: field_mapstyle
+entity_type: paragraph
+bundle: map
+label: Mapstyle
+description: 'Map Styling'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

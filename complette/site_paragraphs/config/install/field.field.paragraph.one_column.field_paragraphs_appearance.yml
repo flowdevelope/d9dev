@@ -1,0 +1,23 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs_appearance
+    - paragraphs.paragraphs_type.one_column
+  module:
+    - classier_paragraphs
+id: paragraph.one_column.field_paragraphs_appearance
+field_name: field_paragraphs_appearance
+entity_type: paragraph
+bundle: one_column
+label: Aussehen
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    background: background-none
+    _value: 'a:2:{s:10:"background";s:15:"background-none";s:15:"_original_delta";i:0;}'
+default_value_callback: ''
+settings: {  }
+field_type: classier_paragraphs

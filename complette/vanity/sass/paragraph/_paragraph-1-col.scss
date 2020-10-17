@@ -1,0 +1,10 @@
+.paragraph {
+
+  &.paragraph--type--one-column {
+    .row > .field-paragraph-text,
+    .row > h2 {
+      @extend .col-12;
+    }
+  }
+
+}

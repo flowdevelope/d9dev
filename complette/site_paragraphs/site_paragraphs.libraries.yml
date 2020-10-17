@@ -1,0 +1,15 @@
+anchor-js:
+  version: VERSION
+  js:
+    /libraries/anchor-js/anchor.min.js: { minified: true }
+
+anchor:
+  version: VERSION
+  js:
+    js/anchor.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - site_paragraphs/anchor-js
+  drupalSettings:
+    showAnchors: null

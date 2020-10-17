@@ -1,0 +1,17 @@
+{%
+  set classes = [
+  'referenz',
+  'row',
+]
+%}
+  <div{{ attributes.addClass(classes) }}>
+      <div class="col-12 col-md-4 image">
+          <img class="img-fluid" alt="{{ content.field_bild[0]['#item'].alt }}"  src="{{ file_url(content.field_bild[0]['#item'].entity.uri.value) }}">
+      </div>
+      <div class="col-12 col-md-8 content">
+        {{ content.field_text }}
+        <p class="name">{{ content.field_vorname_nachname|render|striptags|trim }}</p>
+        <p class="company">{{ content.field_position_unternehmen|render|striptags|trim }}</p>
+      </div>
+      {{ content|without('field_bild','field_text','field_vorname_nachname','field_position_unternehmen') }}
+  </div>

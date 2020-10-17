@@ -1,0 +1,9 @@
+map:
+  version: 1.x
+  js:
+    js/site_map.js: {}
+  css:
+    theme:
+      css/map.css: {}
+  dependencies:
+    - site_map/googleapi

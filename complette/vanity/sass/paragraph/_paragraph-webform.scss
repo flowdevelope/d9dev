@@ -1,0 +1,185 @@
+.paragraph {
+  &.paragraph--type--webform {
+    padding: 0 0 30px;
+    position: relative;
+    .webform-progress {
+      margin-left: -26%;
+      margin-right: -26%;
+      @include media-breakpoint-down(lg) {
+        margin: 0;
+      }
+      .progress-marker {
+        display: none;
+      }
+      .progress-step {
+        height: 30px;
+        background: $gray-100;
+
+        .progress-title {
+          color: $black;
+          font-weight: 400;
+        }
+
+        &.is-active {
+          background: $red;
+
+          .progress-title {
+            color: $white;
+          }
+        }
+
+        &.is-complete {
+          .progress-title {
+            color: $red;
+          }
+        }
+
+        &:after {
+          content: "";
+          display: none;
+        }
+
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+    label {
+      &.form-required{
+        &:after{
+          content: "*";
+          margin-left: 10px;
+        }
+      }
+      width: 100%;
+    }
+    .webform-button--previous,
+    .webform-button--previous:active {
+      @extend .btn-ghost;
+      border-radius: 0;
+      box-shadow: none !important;
+    }
+
+    .webform-button--next,
+    .webform-button--next:active,
+    .webform-button--preview {
+      @extend .btn-green;
+      float: right;
+      border-radius: 5px;
+      box-shadow: none !important;
+      @include media-breakpoint-down(lg) {
+        margin-right: 0;
+      }
+    }
+    .webform-button--submit:active,
+    .webform-button--submit {
+      @extend .btn-green;
+      float: right;
+      /*
+      position: absolute;
+      left: 40%;
+      margin: 10px 0;
+       */
+      border-radius: 5px !important;
+    }
+
+    input, textarea {
+      background: $gray-200;
+      border: 2px solid $primary;
+      border-radius: 0px !important;
+      @extend .defaultfont;
+    }
+    textarea {
+      width: 100%;
+    }
+    .form-textarea {
+      padding: 0.375rem 0.75rem;
+      @extend .defaultfont;
+    }
+    select,
+    .select2 {
+      background: $cyan;
+      border: 2px solid $primary;
+      border-radius: 0px !important;
+      outline: 0px;
+      height: calc(1.5em + 0.75rem);
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    .select2-container--default .select2-selection--single {
+      background-color: $cyan;
+      border: 2px solid $primary;
+      height: calc(1.5em + 0.75rem);
+      padding: 5px 0 0;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    input[type=radio] + label:before,
+    input[type=checkbox] + label:before {
+      height: 12px;
+      width: 12px;
+      margin-right: 10px;
+      content: " ";
+      display: inline-block;
+      vertical-align: baseline;
+      border: 1px solid $black;
+    }
+
+    input[value="Entfernen"] {
+      color: $red;
+    }
+
+    input[type=radio] + label:before {
+      border-radius: 50%;
+    }
+
+    input[type=checkbox] + label:before {
+      border-radius: 2px;
+    }
+
+    input[type=radio]:checked + label:before,
+    input[type=checkbox]:checked + label:before {
+      background: $red;
+    }
+
+    input[type=file] {
+      border-radius: 10px;
+      text-align: center;
+      padding: 5px 60px;
+    }
+
+    hr {
+      border-top: 1px solid $red;
+    }
+    .webform-container-type-details {
+      border-bottom: 1px solid $red;
+      margin-bottom: 15px;
+      label {
+        width: auto;
+        font-weight: 600;
+        margin-right: 15px;
+      }
+      summary {
+        @extend .h3;
+      }
+      a {
+        color: $black;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    }
+    .form-item-datenschutz {
+      label {
+        @extend .h3;
+      }
+    }
+    .form-item--error-message {
+      color: $red;
+    }
+  }
+}
