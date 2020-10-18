@@ -1,0 +1,7 @@
+#map-layer {
+  width: 100%;
+  height: 400px;
+  @include media-breakpoint-up(lg) {
+    height: 480px;
+  }
+}

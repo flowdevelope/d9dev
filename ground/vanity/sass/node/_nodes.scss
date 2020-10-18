@@ -1,6 +1,7 @@
-.referenz {
+.team {
   /* box-shadow: 0 3px 6px rgba($black, .3); */
-  background: $back2;
+  background: $black;
+  color: $white;
   margin: 30px 15px;
   height: 100%;
 
@@ -16,37 +17,8 @@
   }
   .content {
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     flex-direction: column;
     padding: 10px 15px;
-
-    .name {
-      font: {
-        weight: bold;
-        size: 22px;
-      }
-      line-height: 24px;
-      @include media-breakpoint-up(md) {
-        font: {
-          size: 18px;
-        }
-        line-height: 22px;
-      }
-    }
-
-    .company {
-      font: {
-        weight: normal;
-        size: 22px;
-      }
-      line-height: 24px;
-      @include media-breakpoint-up(md) {
-        font: {
-          size: 18px;
-        }
-        line-height: 22px;
-      }
-      margin: 0 0 10px;
-    }
   }
 }

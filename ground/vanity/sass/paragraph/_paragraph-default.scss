@@ -1,11 +1,11 @@
 .paragraph {
   &:not(.nomargin) {
-    margin: 15px 0;
+    margin: 30px 0;
     @include media-breakpoint-up(md) {
-      margin: 20px 0;
+      margin: 100px 0;
     }
     @include media-breakpoint-up(lg) {
-      margin: 30px 0;
+      margin: 128px 0;
     }
     .field--name-field-slide {
       width: 100%;
@@ -82,24 +82,17 @@
     padding-left: 20px;
     padding-right: 15px;
     border-radius: 5px;
-    margin: 0 50px;
-    @include media-breakpoint-up(lg) {
-      margin: 0;
-    }
+
     li {
       padding: 5px 0;
-      @include media-breakpoint-up(md) {
-        padding: 40px 0;
-      }
       &:before {
-        content: "";
-        background: url('/themes/custom/vanity/images/WYSIWYG_Template.svg');
-        height: 65px;
-        width: 65px;
+        content: "\2022";
+        color: $primary;
+        font-size: 40px;
         position: absolute;
         left: 10px;
         @include media-breakpoint-up(lg) {
-          left: -40px;
+          left: 15px;
         }
         display: inline-block;
       }

@@ -1,0 +1,15 @@
+{%
+  set classes = [
+  'team',
+]
+%}
+
+{% block paragraph %}
+  <div class="team">
+    {% block content %}
+      {{ content.field_bild|render }}
+      {{ content.field_beschreibung }}
+      {{ content|without('field_bild','field_beschreibung') }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

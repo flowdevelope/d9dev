@@ -28,8 +28,9 @@
     z-index: -1;
   }
   .headerbox {
-    color: $white;
+    color: $black;
     padding: 40px 0 0;
+
     @include media-breakpoint-up(md) {
       padding: 80px 0 0;
     }
@@ -38,17 +39,16 @@
     }
     z-index: 10;
     .box {
-      width: 95%;
+      width: 100%;
+      border-bottom: 3px solid $primary;
       @include media-breakpoint-up(md) {
-        width: 70%;
+        width: 537px;
       }
-      @include media-breakpoint-up(lg) {
-        width: 40%;
-      }
+
       .field-headertitel {
         display: none;
         @extend h2;
-        color: $white;
+        color: $black;
         text-shadow: 0 3px 6px rgba($gray-900,0.5);
         @include media-breakpoint-up(md) {
           display: block;
@@ -56,12 +56,16 @@
       }
       .field-text {
         margin: 15px 0;
-        text-shadow: 0 3px 6px rgba($gray-900,0.5);
+        text-transform: uppercase;
+        /* text-shadow: 0 3px 6px rgba($gray-900,0.5); */
         @include media-breakpoint-down(sm) {
           position: relative;
-          bottom: -205px;
           color: #000;
           text-shadow: none;
+          bottom: 0;
+        }
+        @include media-breakpoint-up(md) {
+          bottom: -205px;
         }
       }
       .field-link {

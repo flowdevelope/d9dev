@@ -1,0 +1,295 @@
+<?php
+
+/**
+ * Implements hook_preprocess().
+ */
+function site_map_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $map = t('There was an error by generating map.');
+  $i = 0;
+  if($paragraph->bundle() == 'map') {
+
+    if ($paragraph->hasField('field_latitude')) {
+      $lat = $paragraph->get('field_latitude')->getValue();
+      if (!empty($lat[0]['value'])) {
+        $variables['lat'] = $lat[0]['value'];
+        $i+=1;
+
+      }
+    }
+
+    if ($paragraph->hasField('field_longitude')) {
+      $lng = $paragraph->get('field_longitude')->getValue();
+      if (!empty($lng[0]['value'])) {
+        $variables['lng'] = $lng[0]['value'];
+        $i+=1;
+
+      }
+    }
+
+    if ($paragraph->hasField('field_map_adresse')) {
+      $address = $paragraph->get('field_map_adresse')->getValue();
+      if (!empty($address[0]['value'])) {
+        $address = explode(PHP_EOL, $address[0]['value']);
+        array_walk($address, function(&$v){
+          $v = trim($v);
+        });
+        $variables['address'] = implode(', ', $address);
+        $i+=1;
+      }
+    }
+
+    if ($paragraph->hasField('field_map_api_key')) {
+      $api_key = $paragraph->get('field_map_api_key')->getValue();
+      if (!empty($api_key[0]['value'])) {
+        $variables['api_key'] = $api_key[0]['value'];
+        $i+=1;
+      }
+    }
+
+    if ($i == 4) {
+      $map='<script type="text/javascript">
+          var map;
+          var geocoder;
+          var styles = [
+              {
+                  "featureType": "administrative",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      },
+                      {
+                          "saturation": -100
+                      },
+                      {
+                          "lightness": 20
+                      }
+                  ]
+              },
+              {
+                  "featureType": "landscape.man_made",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "simplified"
+                      },
+                      {
+                          "saturation": -60
+                      },
+                      {
+                          "lightness": 10
+                      }
+                  ]
+              },
+              {
+                  "featureType": "landscape.natural",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "simplified"
+                      },
+                      {
+                          "saturation": -60
+                      },
+                      {
+                          "lightness": 60
+                      }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "geometry",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      },
+                      {                         "color": "#fafafa"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "geometry.stroke",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      },
+                      {
+                          "color": "#dcdcdc"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                      {
+                          "color": "#87C846"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                      {
+                          "color": "#87C846"
+                      },
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      },
+                      {
+                          "saturation": -100
+                      },
+                      {
+                          "lightness": 40
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.highway",
+                  "elementType": "geometry.fill",
+                  "stylers": [
+                      {
+                          "color": "#87C846"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.highway",
+                  "elementType": "geometry.stroke",
+                  "stylers": [
+                      {
+                          "color": "#87C846"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "transit",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      },
+                      {
+                          "saturation": -100
+                      },
+                      {
+                          "lightness": 60
+                      }
+                  ]
+              },
+              {
+                  "featureType": "water",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      },
+                      {
+                          "saturation": -10
+                      },
+                      {
+                          "lightness": 30
+                      }
+                  ]
+              }
+          ];
+
+          function getAddress() {
+            geocoder = new google.maps.Geocoder();
+            var loc=[];
+            geocoder.geocode({
+                "address": "'.$variables['address'].'"
+                }, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                  loc[0] = results[0].geometry.location.lat();
+                  loc[1] = results[0].geometry.location.lng();
+                }
+            });
+            return loc;
+          }
+          function initMap() {
+            var mapLayer = document.getElementById("map-layer");
+            var latlng = getAddress();
+
+            var centerCoordinates = new google.maps.LatLng(' . $variables['lat'] . ',' . $variables['lng'] . ');
+            //var defaultOptions = { center: centerCoordinates, zoom: 5 }
+            var styledMap = new google.maps.StyledMapType(styles,
+              {name: "Styled Map"});
+            var mapOptions = {
+              zoom: 16,
+              center: centerCoordinates,
+              scrollwheel: false, // disableScrollingWithMouseWheel as default
+              disableDefaultUI: false,
+              scaleControl: false,  // fixed to BOTTOM_RIGHT
+              panControl: false,
+              zoomControl: true,
+              mapTypeControl: false,
+              streetViewControl: true,
+              streetViewControlOptions: {
+            position: google.maps.ControlPosition.LEFT_BOTTOM
+              },
+              overviewMapControl: true,
+            };
+
+            map = new google.maps.Map(mapLayer, mapOptions);
+            map.mapTypes.set("map_style", styledMap);
+            map.setMapTypeId("map_style");
+            geocoder = new google.maps.Geocoder();
+
+
+                     Geocode("'.$variables['address'].'");
+
+                      function Geocode(address,id) {
+                      geocoder.geocode({
+                      "address": address
+                      }, function(results, status) {
+                      if (status === google.maps.GeocoderStatus.OK) {
+                      var result = results[0].geometry.location;
+                      var icon = {
+                          url: "/themes/custom/vanity/images/marker.png",
+                          scaledSize: new google.maps.Size(50, 40),
+                      };
+                      var marker = new google.maps.Marker({
+                      position: result,
+                      map: map,
+                      title: address,
+                      icon: icon,
+                      url: ""
+                      });
+
+                      google.maps.event.addListener(marker, "click", function () {
+                      window.location.href = this.url;
+                      });
+                      } else if (status === google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+                      setTimeout(function() {
+                      Geocode(address,id);
+                      }, 200);
+                      } else {
+                      alert("Geocode was not successful for the following reason:"
+                      + status);
+                      }
+                      });
+                      }
+
+        }
+        </script>
+        <script	src="https://maps.googleapis.com/maps/api/js?key=' . $variables['api_key'] . '&callback=initMap" async defer></script>';
+
+      echo $map;
+    }
+
+  }
+
+}

@@ -63,7 +63,7 @@
     .webform-button--next,
     .webform-button--next:active,
     .webform-button--preview {
-      @extend .btn-orange;
+      @extend .btn-green;
       float: right;
       border-radius: 5px;
       box-shadow: none !important;
@@ -73,16 +73,18 @@
     }
     .webform-button--submit:active,
     .webform-button--submit {
-      @extend .btn-orange;
-      /* float: right; */
+      @extend .btn-green;
+      float: right;
+      /*
       position: absolute;
       left: 40%;
       margin: 10px 0;
+       */
       border-radius: 5px !important;
     }
 
     input, textarea {
-      background: $cyan;
+      background: $gray-200;
       border: 2px solid $primary;
       border-radius: 0px !important;
       @extend .defaultfont;

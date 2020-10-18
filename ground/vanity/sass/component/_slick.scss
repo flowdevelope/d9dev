@@ -1,15 +1,16 @@
 .slick-dots {
   position: relative;
   left: 40%;
-  bottom: 10px;
+  bottom: 30px;
   display: block;
   padding: 1rem 0;
   list-style-type: none;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-down(md) {
     left: 45%;
   }
-  @include media-breakpoint-up(lg) {
-    left: 50%;
+  @include media-breakpoint-up(md) {
+    left: 80%;
+    bottom: 80px;
   }
   li {
     display: inline-block;
@@ -29,7 +30,7 @@
     text-indent: -9999px;
   }
   li.slick-active button {
-    background-color: $white;
+    background-color: $green;
   }
 }
 

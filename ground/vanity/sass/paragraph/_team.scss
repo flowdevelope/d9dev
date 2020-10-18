@@ -1,0 +1,50 @@
+.paragraph--type--team {
+  .field-paragraph-title {
+    @extend h2;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .field-referenzen {
+    margin: 0 20px;
+  }
+
+  .name {
+    font: {
+      weight: bold;
+    }
+    margin-bottom: 0;
+  }
+
+  .slick-dots {
+    margin: 40px 0 0;
+    padding: 0 10px 0 !important;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 0 10px 0 0 !important;
+
+      &:before {
+        background-image: none !important;
+      }
+
+      button {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        padding: 0;
+        border: none;
+        border-radius: 100%;
+        background-color: transparent;
+        border: 1px solid #fff;
+        text-indent: -9999px;
+      }
+
+      &.slick-active button {
+        background-color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+name: 'Site map'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - paragraphs
+core_incompatible: false

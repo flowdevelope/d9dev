@@ -44,8 +44,8 @@ header nav {
     height: 120px;
     .img-fluid {
       background: #fff;
-      max-width: 35%;
-      margin: 1px 5px;
+      max-width: 45%;
+      margin: 5px;
       @include media-breakpoint-up(lg) {
         height: 135px;
         max-width: 90%;
@@ -63,12 +63,12 @@ header nav {
     }
     @include media-breakpoint-up(xl) {
       top: 0;
-      padding: 0 0 0 35px;
+      padding: 0 0 0 20px;
     }
   }
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding:  0;
     li {
       list-style: none;
@@ -92,29 +92,35 @@ header nav {
           a {
             color: $black !important;
             font: {
-              family: "Rokkitt",sans-serif;
-              size: 25px;
+              size: 20px;
               weight: 400;
             }
-            line-height: 33px;
+            line-height: 24px;
             &:hover {
-              color: $black !important;
+              color: $green !important;
             }
           }
         }
       }
       list-style: none;
-      margin-right: 20px;
+      margin-right: 50px;
       &.open > ul {
         max-height: 500px;
       }
+      &:last-child {
+        margin-right: 0;
+        a,
+        a:hover {
+          background: $primary !important;
+          padding: 5px 10px !important;
+          color: $white !important;
+        }
+      }
       a,
-      a:hover,
       span {
         color: $black !important;
         padding: 0 0 10px;
         font: {
-          family: "Rokkitt",sans-serif;
           size: 20px;
           weight: 400;
         }
@@ -122,17 +128,19 @@ header nav {
         text-transform: uppercase;
         cursor: pointer;
       }
+      a:hover {
+        color: $green !important;
+      }
       h2 {
         padding: 0;
         margin: 0 0 -10px -2px;
         a {
           color: $black !important;
           font: {
-            family: "Rokkitt",sans-serif;
-            size: 256px !important;
+            size: 20px !important;
             weight: 600 !important;
           }
-          line-height: 33px !important;
+          line-height: 24px !important;
 
           @include media-breakpoint-up(lg) {
             font: {
@@ -216,7 +224,7 @@ header nav {
           font: {
             size: 20px !important;
           }
-          line-height: 25px !important;
+          line-height: 24px !important;
           cursor: pointer;
         }
         h2 {
@@ -235,7 +243,7 @@ footer nav {
     li {
       list-style: none;
       text-align: center;
-      padding:  0 20px 0 0;
+      padding:  0 40px 0 0;
       a, a:hover {
         color: $white !important;
         font-family: "Rokkitt",sans-serif;
