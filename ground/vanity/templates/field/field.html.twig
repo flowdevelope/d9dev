@@ -38,28 +38,28 @@
 #}
 
 {% if label_hidden %}
-    {% if multiple %}
-        <div{{ attributes }}>
-            {% for item in items %}
-                <div{{ item.attributes.addClass(field_name|clean_class) }}>{{ item.content }}</div>
-            {% endfor %}
-        </div>
-    {% else %}
-        {% for item in items %}
-            <div{{ attributes.addClass(field_name|clean_class) }}>{{ item.content }}</div>
-        {% endfor %}
-    {% endif %}
-{% else %}
-    <div{{ attributes }}>
-        <div{{ title_attributes }}>{{ label }}</div>
-        {% if multiple %}
-        <div>
-            {% endif %}
-            {% for item in items %}
-                <div{{ item.attributes.addClass(field_name|clean_class) }}>{{ item.content }}</div>
-            {% endfor %}
-            {% if multiple %}
-        </div>
-        {% endif %}
+  {% if multiple %}
+    <div{{ attributes.addClass('items') }}>
+      {% for item in items %}
+        <div{{ item.attributes.addClass(field_name|clean_class) }}>{{ item.content }}</div>
+      {% endfor %}
     </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes.addClass(field_name|clean_class) }}><div class="inner">{{ item.content }}</div></div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass('items') }}>
+    <div{{ title_attributes }}>{{ label }}</div>
+    {% if multiple %}
+    <div>
+      {% endif %}
+      {% for item in items %}
+        <div{{ item.attributes.addClass(field_name|clean_class) }}><div class="inner">{{ item.content }}</div></div>
+      {% endfor %}
+      {% if multiple %}
+    </div>
+    {% endif %}
+  </div>
 {% endif %}

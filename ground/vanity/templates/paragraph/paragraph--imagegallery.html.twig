@@ -39,25 +39,23 @@
  */
 #}
 {%
-    set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  'imagegalery',
 ]
 %}
 
 {% block paragraph %}
-    <section{{ attributes.addClass(classes) }}>
-        <div class="container">
-            <div class="row">
-                {% block content %}
-                  {% if content.field_paragraph_title is not empty %}
-                    <h3 id="{{ title_attributes.id|clean_class }}" class="{{ title_attributes.class }}">{{ content.field_paragraph_title|render|striptags|trim }}</h3>
-                  {% endif %}
-                  {{ content|without('field_paragraph_title') }}
-                {% endblock %}
-            </div>
-        </div>
+  <section{{ attributes.addClass(classes) }}>
+    <div class="container">
+      <div class="row">
+        {% block content %}
+          {{ content.field_galery }}
+        {% endblock %}
+      </div>
+    </div>
 
-    </section>
+  </section>
 {% endblock paragraph %}

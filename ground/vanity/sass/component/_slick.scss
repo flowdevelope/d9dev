@@ -5,10 +5,10 @@
   display: block;
   padding: 1rem 0;
   list-style-type: none;
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     left: 45%;
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     left: 80%;
     bottom: 80px;
   }
@@ -37,34 +37,69 @@
 .slick-prev {
   display: none !important;
   position: absolute;
-  left: 10px !important;
-  @include media-breakpoint-up(lg) {
-    left: 180px !important;
-  }
-  top: 40%;
   border: none;
   background: transparent;
   z-index: 2;
-  height: 34px;
+  i {
+    color:$gray-100;
+    font: {
+      size: 30px;
+    }
+    /*
+    border: 2px solid $red;
+    border-radius: 50%;
+    padding: 5px 11px 5px 7px;
+
+     */
+    &:hover {
+      color: $green;
+    }
+  }
   @include media-breakpoint-up(md) {
     display: block !important;
+    top: 65%;
+    right: 230px;
   }
-  cursor: pointer;
+  @include media-breakpoint-up(lg) {
+    top: 70%;
+    right: 305px;
+  }
+  @include media-breakpoint-up(xl) {
+    right: 355px !important;
+    top: 75%;
+  }
 }
 .slick-next {
   display: none !important;
   position: absolute;
-  right :25px;
-  @include media-breakpoint-up(lg) {
-    right: 180px !important;
-  }
-  top: 40%;
+  right: 30px !important;
+  top: 75%;
   border: none;
   background: transparent;
   z-index: 2;
-  height: 34px;
+  i {
+    color:$gray-100;
+    font: {
+      size: 30px;
+    }
+    /*
+    border: 2px solid $red;
+    border-radius: 50%;
+    padding: 5px 5px 5px 12px;
+
+     */
+    &:hover {
+      color: $green;
+    }
+  }
   @include media-breakpoint-up(md) {
     display: block !important;
+    top: 65%;
   }
-  cursor: pointer;
+  @include media-breakpoint-up(lg) {
+    top: 70%;
+  }
+  @include media-breakpoint-up(xl) {
+    top: 75%;
+  }
 }

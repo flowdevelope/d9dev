@@ -8,7 +8,7 @@
   .image {
     display: flex;
     align-items: center;
-
+    padding: 0;
     img {
       width: auto;
       margin: 0 auto;
@@ -20,5 +20,7 @@
     justify-content:flex-start;
     flex-direction: column;
     padding: 10px 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 }

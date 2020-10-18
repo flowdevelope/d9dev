@@ -1,0 +1,46 @@
+.imagegalery {
+  @include make-container-max-widths();
+  z-index: 1;
+  margin: 15px;
+  @include media-breakpoint-up(md) {
+    margin: 30px 30px !important;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 30px 40px !important;
+  }
+  @include media-breakpoint-up(xl) {
+    margin: 45px auto !important;
+  }
+  .mygalery {
+    position: relative;
+    margin: 0 0 30px;
+    padding: 30px 15px;
+    z-index: 2;
+
+    .hiddencontent {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 95%;
+      height:100%;
+      color: $white;
+      background: $black;
+      padding: 15px 15px 30px;
+      opacity: 0;
+      transition: opacity .5s ease-out;
+      overflow-x: scroll;
+      z-index: 1;
+      @include media-breakpoint-up(lg) {
+        &:hover {
+          opacity: .95;
+        }
+      }
+    }
+    &:hover {
+      .hiddencontent {
+        opacity: .95;
+      }
+    }
+
+  }
+}
