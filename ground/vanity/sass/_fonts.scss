@@ -24,14 +24,16 @@ b {
   color: $red;
 }
 
-
 .green {
   color: $primary;
-  background: $primary;
 }
 
 .yellow {
   color: $yellow;
+}
+
+.headercolor {
+  background: $primary;
 }
 
 h1, .h1 {

@@ -5,6 +5,7 @@
     <div class="col-12 box">
       <h2>{{ content.field_headertitel }}</h2>
       {{ content.field_text }}
+      <a href="#kontakt"><img src="/themes/custom/vanity/images/Kontakt_Button.svg" class = "rolldown"></a>
       {% if content.field_link|render|trim is not empty  %}
         <div class="field-link">
           <a href="{{ content.field_link[0]['#url']|render }}">

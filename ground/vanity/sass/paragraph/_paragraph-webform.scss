@@ -74,13 +74,13 @@
     .webform-button--submit:active,
     .webform-button--submit {
       @extend .btn-green;
-      float: right;
+      float: left;
       /*
       position: absolute;
       left: 40%;
       margin: 10px 0;
        */
-      border-radius: 5px !important;
+      border-radius: 0  !important;
     }
 
     input, textarea {

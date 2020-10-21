@@ -18,6 +18,13 @@
     padding-top:10px;
   }
 
+  .inner {
+    height: 100%;
+    p {
+      padding: 0 15px;
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     &.with-box {
       .row {
@@ -84,7 +91,7 @@
     border-radius: 5px;
 
     li {
-      padding: 5px 0;
+      padding: 5px 10px;
       &:before {
         content: "\2022";
         color: $primary;

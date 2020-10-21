@@ -13,13 +13,13 @@ body {
 .overlay {
   position: fixed;
   display: none;
+  background: $primary;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: $primary;
   z-index: 10;
 }
 
@@ -70,6 +70,21 @@ footer {
   a {
     color: $white;
   }
+  .footerlogo {
+    display: none;
+      @include media-breakpoint-up(md) {
+        display: block;
+        height: 200px;
+        width: 100px;
+        position: absolute;
+        top: -66px;
+        right: 0;
+      }
+    @include media-breakpoint-up(xl) {
+      width: 224px;
+      top: -25px;
+    }
+    }
 
   #block-adresse {
     margin-bottom: 30px;
