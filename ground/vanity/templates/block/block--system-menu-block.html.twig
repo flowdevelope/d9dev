@@ -33,37 +33,39 @@
 #}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <div class="container">
-    <div class="row">
-        <nav aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
-            {#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-collapse" aria-controls="block-hauptnavigation" aria-expanded="false" aria-label="Toggle navigation">#}
-            {#<span class="navbar-toggler-icon"></span>#}
-            {#</button>#}
-            <div class="row no-margin">
-            <div class="col-4 d-lg-none biglogo"><a href="{{ path('<front>') }}"><img alt="{{ site_name }}" class="img-fluid" src="/themes/custom/vanity/images/logo.svg"></a></div>
-            <div class="col-8">
-            <button type="button" class="navbar-toggle navbar-toggler collapsed hamburger hamburger--collapse d-lg-none" data-toggle="collapse" data-target="#main-collapse">
-                <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-                <span class="hamburger-box">
+
+    <nav aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
+      {#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-collapse" aria-controls="block-hauptnavigation" aria-expanded="false" aria-label="Toggle navigation">#}
+      {#<span class="navbar-toggler-icon"></span>#}
+      {#</button>#}
+      <div class="row">
+        <div class="col-4 d-lg-none biglogo"><a href="{{ path('<front>') }}">
+            <img alt="{{ site_name }}" class="img-fluid" src="/themes/custom/vanity/images/logo.svg"></a>
+        </div>
+        <div class="col-8">
+          <button type="button" class="navbar-toggle navbar-toggler collapsed hamburger hamburger--collapse d-lg-none" data-toggle="collapse" data-target="#main-collapse">
+            <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+            <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
-            </button>
-            </div>
-            </div>
+          </button>
+        </div>
+      </div>
 
-            {# Label. If not displayed, we still provide it for screen readers. #}
-            {% if not configuration.label_display %}
-                {% set title_attributes = title_attributes.addClass('visually-hidden') %}
-            {% endif %}
-            {{ title_prefix }}
-            <h2{{ title_attributes.setAttribute('id', heading_id) }}>{{ configuration.label }}</h2>
-            {{ title_suffix }}
+      {# Label. If not displayed, we still provide it for screen readers. #}
+      {% if not configuration.label_display %}
+        {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+      {% endif %}
+      {{ title_prefix }}
+      <h2{{ title_attributes.setAttribute('id', heading_id) }}>{{ configuration.label }}</h2>
+      {{ title_suffix }}
 
-            {# Menu. #}
-            {% block content %}
-                <div id="main-collapse" class="navbar-collapse collapse d-lg-block">
-                    {{ content }}
-                </div>
-            {% endblock %}
-        </nav>
-    </div>
+      {# Menu. #}
+      {% block content %}
+        <div id="main-collapse" class="navbar-collapse collapse d-lg-block">
+          {{ content }}
+        </div>
+      {% endblock %}
+    </nav>
+
 </div>

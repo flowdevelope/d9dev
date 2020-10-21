@@ -29,5 +29,15 @@
     padding: 10px 15px;
     overflow-y: scroll;
     overflow-x: hidden;
+    @include media-breakpoint-up(md) {
+      max-height: 270px;
+      overflow-y: scroll;
+    }
+    @include media-breakpoint-up(lg) {
+      max-height: 366px;
+    }
+    @include media-breakpoint-up(lg) {
+      max-height: 4406px;
+    }
   }
 }

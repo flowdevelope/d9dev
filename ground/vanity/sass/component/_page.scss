@@ -35,7 +35,8 @@ header {
     height: 87px;
   }
   @include media-breakpoint-up(lg) {
-    height: 140px;
+    height: auto;
+    padding: 10px 0;
   }
 }
 
@@ -83,7 +84,7 @@ footer {
     background-repeat: no-repeat;
       @include media-breakpoint-up(md) {
         display: block;
-        height: 200px;
+        height: 85px;
         width: 100px;
         position: absolute;
         top: 133px;
@@ -91,8 +92,8 @@ footer {
       }
       @include media-breakpoint-up(xl) {
         width: 224px;
-        height: 245px;
-        top: 18px;
+        height: 180px;
+        top: 23px;
       }
     }
 
@@ -105,9 +106,10 @@ footer {
 
   .company {
     font: {
-      size: 25px;
-      weight: 600;
+      size: 20px;
+      weight: 700;
     }
+    line-height: 24px;
   }
 
   #block-copyright {

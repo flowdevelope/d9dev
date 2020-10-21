@@ -20,9 +20,6 @@
 
   .inner {
     height: 100%;
-    p {
-      padding: 0 15px;
-    }
   }
 
   @include media-breakpoint-up(lg) {

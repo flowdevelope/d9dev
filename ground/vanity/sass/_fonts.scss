@@ -4,7 +4,7 @@ body,
   font: {
     family:  "Lato", sans-serif;
     size: 20px;
-    weight: 400;
+    weight: 300;
   }
   line-height: 24px;
 }
@@ -12,7 +12,7 @@ body,
 strong,
 b {
   font: {
-    weight: 700;
+    weight: 400;
   }
 }
 
@@ -40,7 +40,7 @@ h1, .h1 {
   color: $black;
   font: {
     size: 30px;
-    weight: 700;
+    weight: 400;
   }
   line-height: 36px;
 
@@ -56,7 +56,7 @@ h2, .h2 {
   color: $black;
   font: {
     size: 30px;
-    weight: 700;
+    weight: 400;
   }
   line-height: 36px;
 
@@ -72,7 +72,7 @@ h3, .h3 {
   color: $black;
   font: {
     size: 30px;
-    weight: 700;
+    weight: 400;
   }
   line-height: 36px;
 
@@ -88,7 +88,7 @@ a:not(.toolbar-icon) {
   color: $primary;
   font: {
     size: 20px;
-    weight: 400;
+    weight: 300;
   }
   line-height: 24px;
   text-decoration: none;
@@ -102,7 +102,7 @@ a:not(.toolbar-icon) {
   display: inline-block;
   color: $white;
   font: {
-    weight: 400;
+    weight: 300;
   }
   background: $primary;
   box-shadow: 0 3px 6px rgba($black,.3);
@@ -120,7 +120,7 @@ a:not(.toolbar-icon) {
   background: $white;
   box-shadow: 0 3px 6px rgba($black,.3);
   font: {
-    weight: 400;
+    weight: 300;
   }
   border: 3px solid $primary;
   padding: 10px 20px;
