@@ -46,7 +46,7 @@
     z-index: -1;
   }
   .headerbox {
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       position: relative;
       top: 30px;
       z-index: 5;
