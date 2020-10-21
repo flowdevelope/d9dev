@@ -1,0 +1,26 @@
+{%
+  set classes = [
+  'extbild',
+]
+%}
+
+{% block paragraph %}
+<section{{ attributes.addClass(classes) }}>
+<div class="container">
+  <div class="row {{ content.field_ausrichtung|render|striptags|trim }}">
+
+    {% block content %}
+
+        <div class="col-12 col-md-6">
+          {{ content.field_bild }}
+        </div>
+        <div class="col-12 col-md-6 {{ content.field_hintergrund|render|striptags|trim }}">
+          {{ content.field_bildtext }}
+        </div>
+
+    {% endblock %}
+
+  </div>
+</div>
+</section>
+{% endblock paragraph %}

@@ -26,11 +26,11 @@
     padding: 0;
     border: none;
     border-radius: 100%;
-    background-color: $gray-100;
+    background-color: $gray-500;
     text-indent: -9999px;
   }
   li.slick-active button {
-    background-color: $green;
+    background-color: $white;
   }
 }
 
@@ -38,10 +38,10 @@
   display: none !important;
   position: absolute;
   border: none;
-  background: transparent;
+  background: $white;
   z-index: 2;
   i {
-    color:$gray-100;
+    color:$black;
     font: {
       size: 30px;
     }
@@ -52,20 +52,20 @@
 
      */
     &:hover {
-      color: $green;
+      color: $gray-100;
     }
   }
   @include media-breakpoint-up(md) {
     display: block !important;
     top: 65%;
-    right: 230px;
+    right: 200px;
   }
   @include media-breakpoint-up(lg) {
     top: 70%;
-    right: 305px;
+    right: 280px;
   }
   @include media-breakpoint-up(xl) {
-    right: 355px !important;
+    right: 340px !important;
     top: 75%;
   }
 }
@@ -75,10 +75,10 @@
   right: 30px !important;
   top: 75%;
   border: none;
-  background: transparent;
+  background: $white;
   z-index: 2;
   i {
-    color:$gray-100;
+    color:$black;
     font: {
       size: 30px;
     }
@@ -89,7 +89,7 @@
 
      */
     &:hover {
-      color: $green;
+      color: $gray-100;
     }
   }
   @include media-breakpoint-up(md) {

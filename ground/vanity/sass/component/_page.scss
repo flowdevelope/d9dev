@@ -31,6 +31,7 @@ header {
   z-index: 10;
   box-shadow: 0px 3px 6px rgba(112,112,112,0.3);
   @include media-breakpoint-up(md) {
+    position: fixed;
     height: 87px;
   }
   @include media-breakpoint-up(lg) {
@@ -40,6 +41,12 @@ header {
 
 main {
   z-index: 1;
+  @include media-breakpoint-up(md) {
+    padding-top: 87px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 140px;
+  }
   .headerpic {
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -72,18 +79,21 @@ footer {
   }
   .footerlogo {
     display: none;
+    background: url("/themes/custom/vanity/images/Bildmarke_Zahnarztpraxis_am_Kirchplatz.svg");
+    background-repeat: no-repeat;
       @include media-breakpoint-up(md) {
         display: block;
         height: 200px;
         width: 100px;
         position: absolute;
-        top: -66px;
+        top: 133px;
         right: 0;
       }
-    @include media-breakpoint-up(xl) {
-      width: 224px;
-      top: -25px;
-    }
+      @include media-breakpoint-up(xl) {
+        width: 224px;
+        height: 245px;
+        top: 18px;
+      }
     }
 
   #block-adresse {

@@ -1,6 +1,5 @@
 .team {
   /* box-shadow: 0 3px 6px rgba($black, .3); */
-  background: $black;
   color: $white;
   margin: 30px 0 0;
   height: 100%;
@@ -9,15 +8,24 @@
     display: flex;
     align-items: center;
     padding: 0;
+    @include media-breakpoint-up(md) {
+      padding: 0 20px 0 0;
+    }
     img {
       width: auto;
       justify-items: center;
     }
   }
+  .spacer {
+    background: $white !important;
+    width: 1rem;
+    padding: 0 !important;
+  }
   .content {
     display: flex;
     justify-content:flex-start;
     flex-direction: column;
+    background: $black;
     padding: 10px 15px;
     overflow-y: scroll;
     overflow-x: hidden;

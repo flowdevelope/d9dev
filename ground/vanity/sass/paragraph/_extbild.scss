@@ -1,0 +1,31 @@
+.extbild {
+  margin: 30px 0;
+  .rechts {
+    flex-direction: row-reverse;
+  }
+  .blau {
+    background: $black;
+    color: $white;
+  }
+  .gruen {
+    background: $primary;
+    color: $white;
+  }
+  .field-bildtext {
+    padding: 15px;
+  }
+}
+.aktuelles {
+  .field-aktuelles {
+    background: $black;
+    color: $white !important;
+    padding: 15px;
+    h2, h3 {
+      color: $white !important;
+    }
+  }
+  display: block;
+  .aus {
+    display: none;
+  }
+}
