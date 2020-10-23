@@ -1,5 +1,4 @@
 header nav {
-  @include make-col-ready();
   @include make-col(12);
   .hamburger {
     position: relative;
@@ -45,11 +44,11 @@ header nav {
     height: 120px;
     .img-fluid {
       background: #fff;
-      max-width: 45%;
-      margin: 5px;
+      max-width: 35%;
+      margin: 1px 5px;
       @include media-breakpoint-up(lg) {
-        height: 135px;
-        max-width: 90%;
+        height: 171px;
+        max-width: 70%;
       }
     }
     @include media-breakpoint-up(md) {
@@ -64,17 +63,17 @@ header nav {
     }
     @include media-breakpoint-up(xl) {
       top: 0;
-      padding: 0;
+      padding: 0 0 0 35px;
     }
   }
   ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding:  0;
     li {
       list-style: none;
       text-align: center;
-      padding: 108px 0 5px;
+      padding: 100px 0 5px;
       ul {
         position: absolute;
         top: 60px;
@@ -93,44 +92,35 @@ header nav {
           a {
             color: $black !important;
             font: {
-              size: 20px;
+              family: "Rokkitt",sans-serif;
+              size: 25px;
               weight: 400;
             }
-            line-height: 24px;
+            line-height: 33px;
             &:hover {
-              color: $green !important;
+              color: $black !important;
             }
           }
         }
       }
       list-style: none;
-      margin-right: 50px;
+      margin-right: 20px;
       &.open > ul {
         max-height: 500px;
       }
-      &:last-child {
-        margin-right: 0;
-        a,
-        a:hover {
-          background: $primary !important;
-          padding: 5px 10px 5px!important;
-          color: $white !important;
-        }
-      }
       a,
+      a:hover,
       span {
         color: $black !important;
         padding: 0 0 10px;
         font: {
+          family: "Rokkitt",sans-serif;
           size: 20px;
-          weight: 400 !important;
+          weight: 400;
         }
         line-height: 24px;
         text-transform: uppercase;
         cursor: pointer;
-      }
-      a:hover {
-        color: $green !important;
       }
       h2 {
         padding: 0;
@@ -138,10 +128,11 @@ header nav {
         a {
           color: $black !important;
           font: {
-            size: 20px !important;
-            weight: 400 !important;
+            family: "Rokkitt",sans-serif;
+            size: 256px !important;
+            weight: 600 !important;
           }
-          line-height: 24px !important;
+          line-height: 33px !important;
 
           @include media-breakpoint-up(lg) {
             font: {
@@ -225,7 +216,7 @@ header nav {
           font: {
             size: 20px !important;
           }
-          line-height: 24px !important;
+          line-height: 25px !important;
           cursor: pointer;
         }
         h2 {
@@ -244,7 +235,7 @@ footer nav {
     li {
       list-style: none;
       text-align: center;
-      padding:  0 40px 0 0;
+      padding:  0 20px 0 0;
       a, a:hover {
         color: $white !important;
         font-family: "Rokkitt",sans-serif;
@@ -258,18 +249,16 @@ footer nav {
     }
   }
 }
+.specialinfo {
+  position: relative;
+  top: -140px;
+}
 #block-infoblock {
   display: block;
-  @include media-breakpoint-up(lg) {
-    position: absolute;
-    right: 65px;
-    top: 15px;
-  }
-  @include media-breakpoint-up(xl) {
-    right: 295px;
-  }
+  width: 100%;
   .info {
-    width: 100%;
+    float:right;
+    margin-right: 35px;
   }
   span {
     font-family: "Rokkitt",sans-serif;

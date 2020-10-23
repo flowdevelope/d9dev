@@ -44,19 +44,28 @@
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   'nomargin',
+  'sliderreferenz'
 ]
 %}
 
 {% block paragraph %}
   <section{{ attributes.addClass(classes) }}>
-    <div class="container team-slider">
-      <div class="row">
-        <div class="team-slider">
-        {% block content %}
-          {{ content.field_team }}
-        {% endblock %}
+    {% block content %}
+      {% for key, child in content.field_referenzen if key|first != '#' %}
+        <div class="sliderinner">
+          <div class="row">
+        <div class="sliderimage col-12 col-lg-4">
+          <img class="img-fluid" src="{{ child['#node'].field_bild.entity.uri.url }}">
         </div>
-      </div>
-    </div>
+        <div class="slidercontent col-12 col-lg-8">
+          {{ child['#node'].field_text.value|raw }}
+          <p class="name">{{ child['#node'].field_vorname_nachname.value }}</p>
+          <p class="company">{{ child['#node'].field_position_unternehmen.value }}</p>
+        </div>
+        </div>
+        </div>
+      {% endfor %}
+      {{ content|without('field_referenzen') }}
+    {% endblock %}
   </section>
 {% endblock paragraph %}

@@ -2,49 +2,63 @@
   Drupal.behaviors.Slider = {
     attach: function (context, settings) {
 
-
-      $('.field-galery').unwrap();
-      $('.field-galery').unwrap();
-      $('.field-galery').unwrap();
-      $('.imagegalery', context).once().slick({
-        infinite: false,
+      $('.leistungen.slider', context).once().slick({
+        infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: false,
-        dots: true,
-        arrows: false,
-        prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-chevron-left' aria-hidden='true'></i></button>",
-        nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-chevron-right' aria-hidden='true'></i></button>",
+        dots: false,
+        autoplaySpeed: 2000,
+        variableWidth: false,
+        focusOnSelect: true,
+        adaptiveHeight: false,
+        centerMode: false,
+        prevArrow: "<img class='slick-prev' src='/themes/custom/vanity/images/Pfeil_links.svg'>",
+        nextArrow: "<img class='slick-next' src='/themes/custom/vanity/images/Pfeil_rechts.svg'>",
         responsive: [
           {
-            breakpoint: 991,
+            breakpoint: 1200,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 2
             }
           },
           {
-            breakpoint: 767,
+            breakpoint: 992,
             settings: {
-              slidesToShow: 1,
+              slidesToShow: 1
             }
           }
         ]
-      });
+      })
+        .on('setPosition', function (event, slick) {
+          $('.aktuelles').find('.slick-slide').css('height', slick.$slideTrack.height() + 'px');
+        });
 
-      $('.field-team').unwrap();
-      $('.field-team').unwrap();
-      $('.field-team').unwrap();
-      $('.team-slider', context).once().slick({
+      $('.sliderreferenz', context).once().slick({
         infinite: false,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: false,
         dots: true,
-        fade: true,
-        arrows: true,
-        prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-chevron-left' aria-hidden='true'></i></button>",
-        nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-chevron-right' aria-hidden='true'></i></button>",
-      });
+        autoplaySpeed: 2000,
+        variableWidth: false,
+        focusOnSelect: true,
+        adaptiveHeight: true,
+        prevArrow: " ",
+        nextArrow: " ",
+        centerMode: false,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      })
+        .on('setPosition', function (event, slick) {
+          $('.aktuelles').find('.slick-slide').css('height', slick.$slideTrack.height() + 'px');
+        });
 
     }
   }

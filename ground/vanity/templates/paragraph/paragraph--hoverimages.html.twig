@@ -1,9 +1,0 @@
-<div{{ attributes.removeAttribute('role').addClass('mygalery') }}>
-  {{ content.field_image }}
-  {% if content.field_hovertext|render|trim is not empty %}
-    <div class="hiddencontent">
-      {{ content.field_hovertext }}
-    </div>
-  {% endif %}
-  {{ content|without('field_image','field_hovertext') }}
-</div>

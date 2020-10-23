@@ -1,0 +1,47 @@
+.sliderreferenz {
+  @include make-col(12);
+  position: relative;
+  background: $back2;
+  padding: 15px 0 0;
+  .slick-list {
+    max-width: 80%;
+    margin: 0 50px;
+    overflow: hidden;
+    @include media-breakpoint-up(lg) {
+      margin: 0 100px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin: 0 200px 0 300px;
+    }
+  }
+  .sliderinner {
+    padding: 0 15px;
+    max-width: 500px;
+    .sliderimage {
+      img {
+        width: auto;
+        margin: 0 auto;
+        justify-items: center;
+      }
+    }
+    .slidercontent {
+      .name {
+        font: {
+          weight: 700;
+          size: 20px;
+        }
+        line-height: 24px;
+      }
+
+      .company {
+        font: {
+          weight: normal;
+          size: 20px;
+        }
+        line-height: 24px;
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+

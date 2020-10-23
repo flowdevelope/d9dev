@@ -2,9 +2,9 @@ body,
 .defaultfont {
   color: $black;
   font: {
-    family:  "Lato", sans-serif;
+    family:  "Roboto", sans-serif;
     size: 20px;
-    weight: 300;
+    weight: 400;
   }
   line-height: 24px;
 }
@@ -12,7 +12,7 @@ body,
 strong,
 b {
   font: {
-    weight: 400;
+    weight: 600;
   }
 }
 
@@ -24,63 +24,64 @@ b {
   color: $red;
 }
 
+
 .green {
   color: $primary;
+  background: $primary;
 }
 
 .yellow {
   color: $yellow;
 }
 
-.headercolor {
-  background: $primary;
-}
-
 h1, .h1 {
   color: $black;
   font: {
-    size: 30px;
-    weight: 400;
+    family: "Rokkitt",sans-serif;
+    size: 40px;
+    weight: 600;
   }
-  line-height: 36px;
+  line-height: 42px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     font: {
-      size: 423px;
+      size: 63px;
     }
-    line-height: 50px;
+    line-height: 71px;
   }
 }
 
 h2, .h2 {
   color: $black;
   font: {
-    size: 30px;
-    weight: 400;
+    family: "Rokkitt",sans-serif;
+    size: 40px;
+    weight: 600;
   }
-  line-height: 36px;
+  line-height: 42px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     font: {
-      size: 42px;
+      size: 63px;
     }
-    line-height: 50px;
+    line-height: 63px;
   }
 }
 
 h3, .h3 {
   color: $black;
   font: {
+    family: "Rokkitt",sans-serif;
     size: 30px;
-    weight: 400;
+    weight: 600;
   }
-  line-height: 36px;
+  line-height: 32px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     font: {
-      size: 42px;
+      size: 63px;
     }
-    line-height: 50px;
+    line-height: 63px;
   }
 }
 
@@ -88,7 +89,7 @@ a:not(.toolbar-icon) {
   color: $primary;
   font: {
     size: 20px;
-    weight: 300;
+    weight: 400;
   }
   line-height: 24px;
   text-decoration: none;
@@ -102,7 +103,7 @@ a:not(.toolbar-icon) {
   display: inline-block;
   color: $white;
   font: {
-    weight: 300;
+    weight: 400;
   }
   background: $primary;
   box-shadow: 0 3px 6px rgba($black,.3);
@@ -120,9 +121,27 @@ a:not(.toolbar-icon) {
   background: $white;
   box-shadow: 0 3px 6px rgba($black,.3);
   font: {
-    weight: 300;
+    weight: 400;
   }
   border: 3px solid $primary;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-orange {
+  display: inline-block;
+  color: $white;
+  background: $orange;
+  box-shadow: 0 3px 6px rgba($black,.3);
+  font: {
+    family: "Rokkitt",sans-serif;
+    size: 30px;
+    weight: 400;
+  }
+  line-height: 24px;
+  border: 3px solid $orange;
+  border-radius: 5px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
