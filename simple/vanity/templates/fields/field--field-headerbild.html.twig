@@ -1,0 +1,3 @@
+{% for item in items %}
+    <div{{ attributes.addClass('headerpic') }} style="background: url({{ item.content['#item'].entity.uri.url }});"></div>
+{% endfor %}

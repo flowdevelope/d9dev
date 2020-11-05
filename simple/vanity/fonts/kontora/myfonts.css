@@ -1,0 +1,84 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3965472, 2020-10-27T04:53:55-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: KontoraThin by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/thin/
+ * 
+ * Webfont: KontoraLight by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/light/
+ * 
+ * Webfont: Kontora-Regular by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/regular/
+ * 
+ * Webfont: KontoraMedium by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/medium/
+ * 
+ * Webfont: Kontora-SemiBold by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/semibold/
+ * 
+ * Webfont: Kontora-Bold by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/bold/
+ * 
+ * Webfont: KontoraExtraBold by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/extrabold/
+ * 
+ * Webfont: KontoraBlack by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/black/
+ * 
+ * Webfont: KontoraExtraBlack by NaumType
+ * URL: https://www.myfonts.com/fonts/naum-type/kontora/extrablack/
+ * 
+ * 
+ * Webfonts copyright: Copyright (c) 2018 by Petr Bushuev. All rights reserved.
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3c8220");
+  
+@font-face {
+  font-family: 'KontoraLight';
+  src: url('webFonts/KontoraLight/font.woff2') format('woff2'), url('webFonts/KontoraLight/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Kontora-Regular';
+  src: url('webFonts/Kontora-Regular/font.woff2') format('woff2'), url('webFonts/Kontora-Regular/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'KontoraThin';
+  src: url('webFonts/KontoraThin/font.woff2') format('woff2'), url('webFonts/KontoraThin/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'KontoraMedium';
+  src: url('webFonts/KontoraMedium/font.woff2') format('woff2'), url('webFonts/KontoraMedium/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'KontoraExtraBold';
+  src: url('webFonts/KontoraExtraBold/font.woff2') format('woff2'), url('webFonts/KontoraExtraBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'KontoraExtraBlack';
+  src: url('webFonts/KontoraExtraBlack/font.woff2') format('woff2'), url('webFonts/KontoraExtraBlack/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'KontoraBlack';
+  src: url('webFonts/KontoraBlack/font.woff2') format('woff2'), url('webFonts/KontoraBlack/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Kontora-Bold';
+  src: url('webFonts/Kontora-Bold/font.woff2') format('woff2'), url('webFonts/Kontora-Bold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Kontora-SemiBold';
+  src: url('webFonts/Kontora-SemiBold/font.woff2') format('woff2'), url('webFonts/Kontora-SemiBold/font.woff') format('woff');
+}
+

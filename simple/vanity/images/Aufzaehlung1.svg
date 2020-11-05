@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="49" viewBox="0 0 49 49">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Pfad_49" data-name="Pfad 49" d="M0-65.046H28.18V-107H0Z" transform="translate(0 106.995)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_213" data-name="Gruppe 213" transform="translate(-128 -1256)">
+    <g id="Gruppe_212" data-name="Gruppe 212" transform="translate(128 1256)">
+      <path id="Rechteck_45" data-name="Rechteck 45" d="M6,0H43a6,6,0,0,1,6,6V43a6,6,0,0,1-6,6H0a0,0,0,0,1,0,0V6A6,6,0,0,1,6,0Z" fill="#fff"/>
+    </g>
+    <g id="Gruppe_74" data-name="Gruppe 74" transform="translate(138 1367.037)">
+      <g id="Gruppe_73" data-name="Gruppe 73" transform="translate(0 -106.995)" clip-path="url(#clip-path)">
+        <g id="Gruppe_68" data-name="Gruppe 68" transform="translate(0 0)">
+          <path id="Pfad_44" data-name="Pfad 44" d="M-43.7-21.848a14.023,14.023,0,0,1-3.955,9.782,12.923,12.923,0,0,0-3.461,7.016A2.331,2.331,0,0,1-53.42-3.085h-8.746a2.308,2.308,0,0,1-2.3-1.954,13.07,13.07,0,0,0-3.484-7.039A14.031,14.031,0,0,1-71.876-21.7a14.052,14.052,0,0,1,14-14.242A14.081,14.081,0,0,1-43.7-21.848" transform="translate(71.877 35.938)" fill="#ff8625"/>
+        </g>
+        <g id="Gruppe_69" data-name="Gruppe 69" transform="translate(8.144 34.272)">
+          <path id="Pfad_45" data-name="Pfad 45" d="M-18.439-2.508A1.7,1.7,0,0,1-20.208-.891h-8.355a1.7,1.7,0,0,1-1.769-1.618,1.7,1.7,0,0,1,1.769-1.618h8.355a1.7,1.7,0,0,1,1.768,1.618" transform="translate(30.331 4.126)" fill="#ff8625"/>
+        </g>
+        <g id="Gruppe_70" data-name="Gruppe 70" transform="translate(9.828 38.739)">
+          <path id="Pfad_46" data-name="Pfad 46" d="M-13.217-2.488a1.685,1.685,0,0,1-1.754,1.6h-5.014a1.685,1.685,0,0,1-1.754-1.6,1.685,1.685,0,0,1,1.754-1.6h5.014a1.684,1.684,0,0,1,1.754,1.6" transform="translate(21.74 4.093)" fill="#ff8625"/>
+        </g>
+        <g id="Gruppe_71" data-name="Gruppe 71" transform="translate(2.421 2.38)">
+          <path id="Pfad_47" data-name="Pfad 47" d="M-18.095-36.189A11.669,11.669,0,0,0-6.425-47.859,11.669,11.669,0,0,0-18.095-59.528,11.669,11.669,0,0,0-29.764-47.859,11.669,11.669,0,0,0-18.095-36.189" transform="translate(29.764 59.528)" fill="#fff"/>
+        </g>
+        <g id="Gruppe_72" data-name="Gruppe 72" transform="translate(6.935 8.076)">
+          <path id="Pfad_48" data-name="Pfad 48" d="M-1.645-2.961A1.91,1.91,0,0,1,.264-4.87,1.91,1.91,0,0,1,2.173-2.961,1.91,1.91,0,0,1,.264-1.051a1.91,1.91,0,0,1-1.909-1.91m8.658,0A1.91,1.91,0,0,1,8.922-4.87a1.91,1.91,0,0,1,1.91,1.909,1.91,1.91,0,0,1-1.91,1.91,1.911,1.911,0,0,1-1.91-1.91m4.514,7.82a7.623,7.623,0,0,1-7.06,4.5,7.571,7.571,0,0,1-7.1-4.528.923.923,0,0,1,.5-1.208.927.927,0,0,1,.354-.071.924.924,0,0,1,.854.57,5.731,5.731,0,0,0,5.4,3.388A5.777,5.777,0,0,0,9.831,4.126a.924.924,0,0,1,1.7.734" transform="translate(2.706 4.87)" fill="#ff8625"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

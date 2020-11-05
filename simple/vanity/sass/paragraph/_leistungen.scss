@@ -1,0 +1,46 @@
+.leistung {
+  position: relative;
+  height:100%;
+  padding: 20px 0;
+  text-align: center;
+  margin: 0 20px;
+
+  h3 {
+    padding-top: 30px;
+  }
+
+  .field-icon {
+    margin-bottom: 20px;
+
+    img {
+      height: 120px;
+      margin: auto;
+      width: auto;
+    }
+  }
+
+  .field-title {
+    @extend h2;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .field-beschreibung{
+    @include make-col-ready();
+  }
+
+  .field-name {
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    @extend strong;
+    margin-top:20px;
+  }
+
+}
+
+.slider-wrapper {
+  background-color: $back1;
+  padding: 0 0 30px !important;
+}

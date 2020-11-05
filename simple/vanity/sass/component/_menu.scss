@@ -1,0 +1,336 @@
+header nav {
+  @include make-col(12);
+  .hamburger {
+    position: relative;
+    top: 45px;
+    float: right;
+    margin-right: 15px;
+    z-index: 100;
+    .hamburger-box {
+      width: 20px;
+      height: 15px;
+      margin: 0;
+      .hamburger-inner {
+        background-color: $black;
+        &:after,
+        &:before {
+          background-color: $black;
+        }
+      }
+    }
+    @include media-breakpoint-up(md) {
+      top: 70px;
+    }
+  }
+  .no-margin {
+    margin: 0;
+  }
+
+
+
+  @include media-breakpoint-down(md) {
+    .navbar-brand {
+      position: relative;
+      float: none;
+      margin: 0;
+      img {
+        padding: 0 15px;
+        width: 260px;
+      }
+    }
+  }
+  .logo,
+  .biglogo {
+    position: relative;
+    left: 10px;
+    padding: 5px 0;
+    width: 120px;
+    height: 120px;
+    .img-fluid {
+      background: #fff;
+      max-width: 75%;
+      margin: 20px 5px;
+      @include media-breakpoint-up(md) {
+        max-width: 50%;
+        margin: 25px 5px;
+      }
+      @include media-breakpoint-up(lg) {
+        height: 135px;
+        max-width: 70%;
+        margin: -3px 5px;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      left: 5px;
+      top: 10px;
+      max-width: 45%;
+      margin: 0;
+    }
+    @include media-breakpoint-up(lg) {
+      left: 0;
+      top: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      top: 0;
+      padding: 0 0 0 10px;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding:  0;
+    li {
+      list-style: none;
+      text-align: center;
+      padding: 88px 0 5px;
+      ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: $white;
+        max-height: 0;
+        transition: max-height .8s ease-out;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        li {
+          display: block;
+          padding: $spacer;
+          margin: 0 !important;
+          a {
+            color: $black !important;
+            font: {
+              family: "Rokkitt",sans-serif;
+              size: 25px;
+              weight: 400;
+            }
+            line-height: 33px;
+            &:hover {
+              color: $black !important;
+            }
+          }
+        }
+      }
+      &.open > ul {
+        max-height: 500px;
+      }
+      a,
+      a:hover,
+      span {
+        font: {
+          family: "Kontora-Bold";
+        }
+        color: $black !important;
+        padding: 0 0 10px;
+        cursor: pointer;
+      }
+      h2 {
+        padding: 0;
+        margin: 0 0 -10px -2px;
+        a {
+          color: $black !important;
+          font: {
+            family: "Rokkitt",sans-serif;
+            size: 256px !important;
+            weight: 600 !important;
+          }
+          line-height: 33px !important;
+
+          @include media-breakpoint-up(lg) {
+            font: {
+              size: 34px !important;
+            }
+            line-height: 42px !important;
+          }
+        }
+      }
+      &.active {
+        ul {
+          li {
+            a {
+              color: $black !important;
+              pointer-events: auto !important;
+            }
+          }
+        }
+      }
+      @include media-breakpoint-down(lg) {
+        margin-right:20px;
+      }
+      &:last-child {
+        a {
+          background: $gray-400;
+          padding: 10px 10px 5px;
+          color: $white !important;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    #main-collapse {
+      position: fixed;
+      background: $primary;
+      width: 100vW;
+      height: 0;
+      max-height: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      transition: height .5s ease-in;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      flex-direction: column;
+      padding:  0 15px;
+      margin: 0;
+      background: $primary;
+      height: 40vH;
+      @include media-breakpoint-down(sm) {
+        height:100vH;
+      }
+      z-index: 100;
+      li {
+        ul {
+          position: relative;
+          top:15px;
+        }
+        position: relative;
+        display: block;
+        padding: 20px 0;
+        width: 100%;
+        transition: rotate 3s ease-out;
+        text-align: center;
+        /*
+        &.parent--item {
+          &:after {
+            content: "\f105";
+            font-family: "FontAwesome";
+            font-size: 24px;
+            position: absolute;
+            top: 17px;
+            right: 15px;
+            color: $black;
+            cursor: pointer;
+          }
+        }
+        */
+        &.open {
+          &:after {
+            content: "\f105";
+            font-family: "FontAwesome";
+            transform: rotate(90deg);
+          }
+          > ul {
+            display: block;
+            max-height: 500px;
+            transition: max-height 0.1s ease-in;
+          }
+        }
+        a,
+        span {
+          color: $white !important;
+          font: {
+            size: 20px !important;
+          }
+          line-height: 25px !important;
+          cursor: pointer;
+        }
+        h2 {
+          margin: 0 0 2px -2px;
+        }
+        &:last-child {
+          a {
+            background: $white;
+            color: $primary !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer nav {
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      text-align: center;
+      padding:  0 90px 0 0;
+      a, a:hover {
+        color: $black !important;
+        font: {
+          family: "Kontora-Bold";
+        }
+        text-decoration: none;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 15px;
+    }
+  }
+}
+.specialinfo {
+  position: relative;
+  top: -140px;
+}
+#block-infoblock {
+  display: block;
+  width: 100%;
+  .info {
+    float:right;
+    margin-right: 35px;
+  }
+  span {
+    font-family: "Rokkitt",sans-serif;
+    font-size: 17px;
+    margin: 0 30px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  a {
+    font-family: "Rokkitt",sans-serif;
+    color: $red !important;
+  }
+  @include media-breakpoint-up(lg) {
+    color: $red;
+  }
+}
+
+.drilldown {
+  .info{
+    background: $primary;
+    color: $white;
+    width: 100vW;
+    text-align: center;
+    margin-top: -1px;
+    padding: 10px 0;
+    span {
+      display: block;
+      padding: 15px 0;
+    }
+    a {
+      font-family: "Rokkitt",sans-serif;
+      color: $white !important;
+      padding: 15px 0;
+    }
+  }
+}
+
+@include media-breakpoint-between(lg, lg) {
+  .topnav {
+    a {
+      font: {
+        size: 22px;
+      };
+    }
+  }
+}

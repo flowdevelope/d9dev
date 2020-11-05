@@ -1,0 +1,18 @@
+.paragraph {
+
+  &.paragraph--type--three-columns .row > div:not(.contextual) {
+    @extend .col-lg-4;
+
+    &:last-child {
+      @include media-breakpoint-up(md) {
+        @include make-col(12)
+      }
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(4)
+      }
+    }
+  }
+
+}
+

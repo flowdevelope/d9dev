@@ -1,0 +1,38 @@
+.paragraph {
+  &:not(.nomargin) {
+    margin: 30px 0;
+  }
+
+  h2.paragraphtitle {
+    @include make-col(12);
+    text-align: center;
+    font: {
+      weight: 700 !important;
+    }
+  }
+
+  &.paragraph--type--timer {
+    .field-timer-date {
+      display: none !important;
+    }
+    .field-timer-text {
+      width: 100%;
+      padding: 0 15px;
+      .clock {
+        @include make-row();
+        @include make-col(12);
+        max-width: 730px;
+        margin: 0 auto;
+        padding: 8px 15px;
+        text-align: center;
+        font: {
+          weight: 300;
+          size: 42px;
+        }
+        line-height: 51px;
+        color: $red;
+        background: #DFDFDF;
+      }
+    }
+  }
+}

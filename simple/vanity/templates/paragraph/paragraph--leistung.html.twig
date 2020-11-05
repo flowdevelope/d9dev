@@ -1,0 +1,16 @@
+{%
+  set classes = [
+  'leistung',
+]
+%}
+
+{% block paragraph %}
+  <div class="leistung">
+    {% block content %}
+      {{ content.field_icon|render }}
+      {{ content.field_beschreibung }}
+      {{ content.field_name }}
+      {{ content|without('field_icon','field_beschreibung', 'field_name') }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

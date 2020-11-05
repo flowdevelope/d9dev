@@ -1,0 +1,6 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body.cke_editable {
+  margin: 8px;
+}

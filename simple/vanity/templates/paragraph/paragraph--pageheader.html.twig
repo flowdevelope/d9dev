@@ -1,0 +1,24 @@
+{{ attach_library("vanity/background") }}
+<div {{ attributes.addClass('pageheader') }}>
+  <div class="blur" style="background-image: url({{ content.field_background|render|striptags|trim }})"></div>
+  <div class="headerbox container">
+    <div class="col-12 pageheaderinner">
+      <div class="box">
+        <h2>{{ content.field_headertitel }}</h2>
+        {{ content.field_text }}
+        <a href="#kontakt"><img src="/themes/custom/vanity/images/Kontakt_Button.svg" class = "rolldown"></a>
+        {% if content.field_link|render|trim is not empty  %}
+          <div class="field-link">
+            <a href="{{ content.field_link[0]['#url']|render }}">
+              {% trans %}
+                Learn more
+              {% endtrans %}
+            </a>
+          </div>
+        {% endif %}
+        {{ content|without('field_link', 'field_text', 'field_headertitel', 'field_background') }}
+      </div>
+    </div>
+  </div>
+</div>
+
